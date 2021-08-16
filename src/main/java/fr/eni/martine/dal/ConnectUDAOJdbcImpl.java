@@ -7,17 +7,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.eni.martine.bo.User;
+
 public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 	
 	
-	private static final String SQL_SELECT_USER = "SELECT pseudo, email, mot_de_passe FROM UTILISATEUR; ";
+	private static final String SQL_SELECT_USER = "SELECT pseudo, email, mot_de_passe FROM UTILISATEURS; ";
 	
 	
 	
 	@Override
-	public List<USER> ConnectU() throws DalException {
-		 List<USER> affuser = new ArrayList<>();
+	public boolean ConnectU() throws DalException {
+		// List<User> affuser = new ArrayList<>();
+		boolean toto = true;
 		 User user;
 		try {
 		
@@ -30,21 +33,30 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	                    resultSet.getString("email"),
 	                    resultSet.getString("MDP")
 	                    );
-	            affuser.add(user);
+	            //user.add(user);
 	        }			
-	        if (user.getSpeudo.equlas(resultSet.getString("pseudo"))
+	        if ((user.getPseudo().equals(resultSet.getString("pseudo")) || user.getPseudo().equals(resultSet.getString("email"))) 
+	        		|| (user.getEmail().equals(resultSet.getString("email")) || user.getEmail().equals(resultSet.getString("pseudo")))){
+	        	
+	        	if(user.getMotDePasse().equals(resultSet.getString("MDP"))){
+	        		toto = true;
+	        		return toto;
+	        	}
+	        }else 
+	        	toto = false;
+	        	return toto;
 	        
 	        
-	       // (aObject.equals(bObject) && bObject.equals(aObject));
+	       
 	        
 			cnx.close();
 		} catch (SQLException e) {
 			
 			e.printStackTrace();
-			throw new BusinessException("Une erreur est apparue lors de la communication vers la BDD");
+			throw new DalException("Une erreur est apparue lors de la communication vers la BDD");
 			
 		}
-		return affavis;
+		//return affuser;
 	}
 	
 	

@@ -2,10 +2,12 @@ package fr.eni.martine.dal;
 
 import java.util.List;
 
+import fr.eni.martine.bo.User;
+
 public interface ConnectUDAO {
 
 	
-	public List<USER> ConnectU() throws DalException;
+	public boolean ConnectU() throws DalException;
 	
 	
 	
