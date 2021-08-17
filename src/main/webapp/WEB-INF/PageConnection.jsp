@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="POST">
+<form action="./connection" method="POST">
 
 <label for="nom">Votre Identifiant</label>
 <input type="text" name="identifiant" placeholder="votre identifiant?" size="30" maxlength="10"><br>

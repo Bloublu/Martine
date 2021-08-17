@@ -7,12 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.martine.bll.ConnectManager;
 import fr.eni.martine.bll.ConnectionManager;
 import fr.eni.martine.dal.DalException;
 import fr.eni.martine.servlet.BLLExeception.BllException;
 
 
-@WebServlet("/ServletConnection")
+@WebServlet("/connection")
 public class ServletConnection extends HttpServlet {
 	
 	private  ConnectionManager connectionmanager;
@@ -39,7 +40,14 @@ public class ServletConnection extends HttpServlet {
 		//2-On apelle la couche BLL avec ces parametres 
 		try {
 			this.connectionmanager.ConnectUserBll(identifiant, motdepasse);
-		
+			
+			 Boolean connect = connectionmanager.ConnectUserBll(identifiant, motdepasse);
+				if(connect = true) {
+					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
+				}else {
+					request.getRequestDispatcher("/WEB-INF/PageTesMort.jsp").forward(request, response);
+				}
+				
 		} catch (BllException e) {
 			
 			e.printStackTrace();
@@ -47,7 +55,6 @@ public class ServletConnection extends HttpServlet {
 	
 		}
 		
-		request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
 	}
 
 }
