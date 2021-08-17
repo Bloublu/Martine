@@ -7,19 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.eni.martine.bll.ConnectionManager;
 import fr.eni.martine.bo.User;
 
 public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
-	
+
 	  
-	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE pseudo LIKE ? OR email LIKE ? AND mot_de_passe = ?;";
+	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE (pseudo = ? OR email = ?) AND mot_de_passe = ?;";
 	    
 
 	 @Override
 	 	public Boolean ConnectionUser(String identifiant, String Mdp) throws DalException{
 	 		Boolean CUser = false;
-	 		
 	 		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
 	             PreparedStatement pStmt = cnx.prepareStatement(SELECT_USER);
 	             pStmt.setString(1, identifiant);

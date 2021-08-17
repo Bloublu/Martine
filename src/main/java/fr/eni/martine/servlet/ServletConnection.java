@@ -42,10 +42,10 @@ public class ServletConnection extends HttpServlet {
 			this.connectionmanager.ConnectUserBll(identifiant, motdepasse);
 			
 			 Boolean connect = connectionmanager.ConnectUserBll(identifiant, motdepasse);
-				if(connect = true) {
+				if(connect == true) {
 					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
 				}else {
-					request.getRequestDispatcher("/WEB-INF/PageTesMort.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/TesMort.jsp").forward(request, response);
 				}
 				
 		} catch (BllException e) {
