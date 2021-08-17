@@ -1,13 +1,11 @@
 package fr.eni.martine.dal;
 
-import java.util.List;
-
-import fr.eni.martine.bo.User;
+import java.sql.SQLException;
 
 public interface ConnectUDAO {
 
 	
-	public boolean ConnectU() throws DalException;
+	public Boolean ConnectionUser(String identifiant, String Mdp) throws DalException;
 	
 	
 	
