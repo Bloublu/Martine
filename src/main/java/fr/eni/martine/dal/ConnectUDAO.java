@@ -7,7 +7,10 @@ import fr.eni.martine.bo.User;
 public interface ConnectUDAO {
 
 	
-	public boolean ConnectU() throws DalException;
+	
+	public Boolean ConnectionUser(String identifiant, String Mdp) throws DalException;
+	
+	
 	
 	
 	
