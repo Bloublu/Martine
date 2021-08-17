@@ -12,8 +12,6 @@ import fr.eni.martine.bo.User;
 public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 	
-	
-	
 	  
 	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE pseudo LIKE ? OR email LIKE ? AND mot_de_passe = ?;";
 	    
@@ -37,9 +35,10 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	 		
 	 		
 	 	}return CUser;
-		
+
 	}
 	 
+
 }
 //    // if ((user.getPseudo().equals(resultSet.getString("pseudo")) || user.getPseudo().equals(resultSet.getString("email"))) 
 //	|| (user.getEmail().equals(resultSet.getString("email")) || user.getEmail().equals(resultSet.getString("pseudo")))){
