@@ -30,7 +30,7 @@ final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE pseudo LIKE 
             }
          catch (Exception e) {
             e.printStackTrace();
-            throw new DalException("erreur dans la méthode getMotDePasse");
+            throw new DalException("erreur dans la méthode ConnectionUser Dal");
         
 		
 		
