@@ -1,0 +1,44 @@
+@charset "ISO-8859-1";
+
+form{
+display: flex;
+justify-content: center;		
+	
+}
+
+.colonneG{
+	
+background-color: yellow;	
+margin-right:20px;
+}
+
+
+.colonneD{
+	
+background-color: red;		
+		
+}
+
+
+h1{
+	
+text-align: center;	
+	
+}
+
+.button{	
+display: flex;
+justify-content: center;	
+	
+}
+
+.creer{
+	
+margin-right:20px;
+	
+}
+
+.annuler{
+	
+	
+}

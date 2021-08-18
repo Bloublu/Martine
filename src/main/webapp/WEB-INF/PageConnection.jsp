@@ -25,7 +25,11 @@
 
 <button type="submit">Valider</button>
 
+
 </form>
+
+<button type="submit" name="compte" onclick="document.location.href='${pageContext.request.contextPath}/Inscription'">Créer Un Compte</button>
+
 
 </body>
 </html>
