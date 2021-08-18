@@ -15,7 +15,7 @@
 <form action="./connection" method="POST">
 
 <label for="nom">Votre Identifiant</label>
-<input type="text" name="identifiant" placeholder="votre identifiant?" size="30" maxlength="50"><br>
+<input type="text" name="identifiant" placeholder="votre pseudo ou adresse mail ?" size="30" maxlength="50"><br>
 
 
 <label for="mot de passe">Votre Mot De Passe</label>

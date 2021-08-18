@@ -9,26 +9,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.eni.martine.bll.ConnectManager;
+import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bll.ConnectionManager;
+import fr.eni.martine.bo.User;
 import fr.eni.martine.dal.DalException;
-import fr.eni.martine.servlet.BLLExeception.BllException;
 
 
 @WebServlet("/connection")
 public class ServletConnection extends HttpServlet {
 	
 	private  ConnectionManager connectionmanager;
+	private User user;
        
    
     public ServletConnection() {
         super();
         this.connectionmanager = new ConnectionManager();
+        this.user = new User();
     }
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
+		request.getSession().getAttribute(user.getPseudo());
 		request.getRequestDispatcher("/WEB-INF/PageConnection.jsp").forward(request, response);
 	}
 
@@ -39,13 +42,13 @@ public class ServletConnection extends HttpServlet {
 		String identifiant = request.getParameter("identifiant");
 		String motdepasse = request.getParameter("motdepasse");
 		
+		//String petitNom = user.getPseudo();
 		//2-On apelle la couche BLL avec ces parametres 
 		try {
-			this.connectionmanager.ConnectUserBll(identifiant, motdepasse);
-			
-			String erreur = "Utilisateur ou mot de passe incorrect";
-			 Boolean connect = connectionmanager.ConnectUserBll(identifiant, motdepasse);
-				if(connect == true) {
+		
+			 User connectUser = connectionmanager.ConnectUserBll(identifiant, motdepasse);
+				if(connectUser  !=null) {
+					
 					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
 				}
 				else {
@@ -56,12 +59,10 @@ public class ServletConnection extends HttpServlet {
 				}
 				
 		} catch (BllException e) {
-			
-			
 			e.printStackTrace();
-			
-			
-	
+			request.setAttribute("erreur", e.getMessage());
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/PageConnection.jsp"); 
+			dispatcher.forward(request, response);
 		}
 		
 	}

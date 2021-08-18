@@ -10,6 +10,9 @@
 
 
 <h1>ACCUEILLLLLL</h1>
+<h2>Bienvenue ${user.pseudo}</h2>
+	
+
 
 </body>
 </html>
