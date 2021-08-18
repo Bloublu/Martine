@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bll.ConnectionManager;
@@ -48,6 +49,8 @@ public class ServletConnection extends HttpServlet {
 		
 			 User connectUser = connectionmanager.ConnectUserBll(identifiant, motdepasse);
 				if(connectUser  !=null) {
+					HttpSession session = request.getSession();
+						session.setAttribute("User", connectUser);
 					
 					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
 				}
