@@ -1,6 +1,8 @@
 package fr.eni.martine.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,16 +43,23 @@ public class ServletConnection extends HttpServlet {
 		try {
 			this.connectionmanager.ConnectUserBll(identifiant, motdepasse);
 			
+			String erreur = "Utilisateur ou mot de passe incorrect";
 			 Boolean connect = connectionmanager.ConnectUserBll(identifiant, motdepasse);
 				if(connect == true) {
 					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
-				}else {
-					request.getRequestDispatcher("/WEB-INF/TesMort.jsp").forward(request, response);
+				}
+				else {
+				request.setAttribute("erreur", "Utilisateur ou mot de passe incorrect");				
+					RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/PageConnection.jsp"); 
+					dispatcher.forward(request, response);
+
 				}
 				
 		} catch (BllException e) {
 			
+			
 			e.printStackTrace();
+			
 			
 	
 		}
