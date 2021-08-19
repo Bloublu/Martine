@@ -7,19 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class Inscription
- */
+import fr.eni.martine.bll.InscriptionManager;
+import fr.eni.martine.servlet.BLLExeception.BllException;
+
+
 @WebServlet("/Inscription")
 public class ServletInscription extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+
+	private InscriptionManager inscriptionmanager;	
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
     public ServletInscription() {
         super();
-        // TODO Auto-generated constructor stub
+       this.inscriptionmanager = new InscriptionManager();
     }
 
 	/**
@@ -35,20 +35,27 @@ public class ServletInscription extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		try {
 				//On recupere les champs de saisie de la creation du nouvel utilisateur
-		
 				String pseudo = request.getParameter("pseudo");
 				String prenom = request.getParameter("prenom");
 				String rue = request.getParameter("rue");
-				String téléphone = request.getParameter("téléphone");
+				String telephone = request.getParameter("telephone");
 				String motdepasse = request.getParameter("motdepasse");
 				String email = request.getParameter("email");
 				String nom = request.getParameter("nom");
 				String codepostal = request.getParameter("codepostal");
-				String motdepasseconfirmation = request.getParameter("motdepasseconfirmation");
 				String ville = request.getParameter("ville");
-		
-		request.getRequestDispatcher("/WEB-INF/Inscription.jsp").forward(request, response);
+				
+				//On apelle la couche BLL
+				this.inscriptionmanager.CreateUser(pseudo, motdepasse, prenom, rue, telephone, nom, codepostal, ville, email);
+							
+				} catch (BllException e) {
+					
+					e.printStackTrace();
+				}
+				
+				request.getRequestDispatcher("/WEB-INF/Inscription.jsp").forward(request, response);
 	}
 
 }

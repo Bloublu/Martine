@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.eni.martine.bll.ConnectManager;
+
 import fr.eni.martine.bll.ConnectionManager;
 import fr.eni.martine.dal.DalException;
 import fr.eni.martine.servlet.BLLExeception.BllException;
@@ -46,7 +46,7 @@ public class ServletConnection extends HttpServlet {
 			String erreur = "Utilisateur ou mot de passe incorrect";
 			 Boolean connect = connectionmanager.ConnectUserBll(identifiant, motdepasse);
 				if(connect == true) {
-					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/ListeEnchere.jsp").forward(request, response);
 				}
 				else {
 				request.setAttribute("erreur", "Utilisateur ou mot de passe incorrect");				
@@ -54,6 +54,8 @@ public class ServletConnection extends HttpServlet {
 					dispatcher.forward(request, response);
 
 				}
+				
+				
 				
 		} catch (BllException e) {
 			

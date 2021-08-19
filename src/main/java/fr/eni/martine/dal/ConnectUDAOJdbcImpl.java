@@ -12,8 +12,9 @@ import fr.eni.martine.bo.User;
 
 public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
+	final static String INSERT_INTO_INSCRIPTION ="INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,codepostal,ville,motdepasse)"
+			+ "VALUES(?,?,?,?,?,?,?,?,?);";
 
-	  
 	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE (pseudo = ? OR email = ?) AND mot_de_passe = ?;";
 	    
 
@@ -30,26 +31,40 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	             }
 	          catch (Exception e) {
 	             e.printStackTrace();
-	             throw new DalException("erreur dans la méthode ConnectionUser");
-	         
-	 		
-	 		
+	             throw new DalException("erreur dans la méthode ConnectionUser");	
 	 	}return CUser;
 
 	}
 	 
+	 	public void CreateUser (User user)throws DalException {
 
+	 	try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
+	 		
+	 	PreparedStatement pSt = cnx.prepareStatement(INSERT_INTO_INSCRIPTION);
+	 	
+	 	pSt.setString(1, user.getPseudo());
+        pSt.setString(2, user.getNom());
+        pSt.setString(3,user.getPrenom());
+        pSt.setString(4,user.getEmail());
+        pSt.setString(5,user.getTelephone());
+        pSt.setString(6,user.getRue());
+        pSt.setString(7,user.getCodepostal());
+        pSt.setString(8,user.getVille());
+        pSt.setString(9,user.getMotDePasse());
+        
+         pSt.executeUpdate();
+       
+	 	} catch (SQLException e) {
+	 		
+        e.printStackTrace();
+        
+        throw new DalException("erreur dans la méthode Create User");
+
+	 	}
+	}
 }
-//    // if ((user.getPseudo().equals(resultSet.getString("pseudo")) || user.getPseudo().equals(resultSet.getString("email"))) 
-//	|| (user.getEmail().equals(resultSet.getString("email")) || user.getEmail().equals(resultSet.getString("pseudo")))){
-//
-//if(user.getMotDePasse().equals(resultSet.getString("MDP"))){
-//	toto = true;
-//	return toto;
-//}
-//}else 
-//toto = false;
-//return toto;
+
+	
 	
 	
 	

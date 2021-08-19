@@ -11,7 +11,7 @@
 <h1>Formulaire d'inscription</h1>
 
 
-<form action="POST">
+<form action="./Inscription" action="POST">
 
 	<div class="colonneG">
 
@@ -25,7 +25,7 @@
 		<input type="text" name="rue" placeholder="Mettez votre Rue" size="30" maxlength="50"><br>
 		<br>
 		<label for="téléphone">Téléphone : </label>
-		<input type="text" name="téléphone" placeholder="Mettez votre 06-07" size="30" maxlength="50"><br>
+		<input type="text" name="telephone" placeholder="Mettez votre 06-07" size="30" maxlength="50"><br>
 		<br>
 		<label for="mot de passe ">Mot De Passe : </label>
 		<input type="text" name="motdepasse" placeholder="Inventez votre Mot De Passe" size="30" maxlength="50"><br>
@@ -46,8 +46,8 @@
 		<label for="codepostal">Code Postal : </label>
 		<input type="text" name="codepostal" placeholder="Mettez votre Code Postal" size="30" maxlength="50"><br>
 		<br>
-		<label for="Mot De Passe Confirmation ">Confirmation de Mot De Passe : </label>
-		<input type="text" name="Mot De Passe Confirmation" placeholder="Confirmation de Mot De Passe" size="30" maxlength="50"><br>
+		<label for="motdepasseconfirmation">Confirmation de Mot De Passe : </label>
+		<input type="text" name="motdepasseconfirmation" placeholder="Confirmation de Mot De Passe" size="30" maxlength="50"><br>
 		<br>
 	</div>
 	
