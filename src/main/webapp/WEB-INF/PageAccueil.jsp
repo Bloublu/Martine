@@ -10,9 +10,9 @@
 </head>
 <body>
 
-
 <h1>ACCUEIL</h1>
 <h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
+
 	
 <a href = "./private/NouvelleVente">Nouvelle vente</a><br><br>
 
