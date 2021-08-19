@@ -10,7 +10,7 @@
 
 
 <h1>ACCUEILLLLLL</h1>
-<h2>Bienvenue ${User.nom} ${User.prenom}</h2> 
+<h2>Bienvenue ${User.nom} ${User.prenom}, il vous reste ${User.credit} de crédit.</h2> 
 	
 
 
