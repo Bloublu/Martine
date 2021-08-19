@@ -6,24 +6,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Accueil</title>
 </head>
 <body>
 
 
 <h1>ACCUEIL</h1>
-<h2>Bienvenue ${User.nom} ${User.prenom}</h2> 
+<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
 	
 <a href = "./private/NouvelleVente">Nouvelle vente</a><br><br>
 
 <a href = "./connection">Connexion</a><br><br>
 
+<a href ="./Profil">Profil</a><br><br>
 
 
-
-<c:if test="${User }">
-	<a href = "./AccueilServlet">Deconnexion</a>
-</c:if>
+<%--<c:if test="${user }">
+	<a href = >Deconnexion</a>
+</c:if>  --%>
 
 
 

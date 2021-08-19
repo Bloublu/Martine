@@ -52,7 +52,7 @@ public class ServletConnection extends HttpServlet {
 			 User connectUser = connectionmanager.ConnectUserBll(identifiant, motdepasse);
 				if(connectUser  !=null) {
 					HttpSession session = request.getSession();
-						session.setAttribute("User", connectUser);
+						session.setAttribute("user", connectUser);
 					
 					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
 

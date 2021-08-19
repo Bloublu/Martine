@@ -12,7 +12,7 @@ import fr.eni.martine.bo.User;
 public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 	final static String INSERT_INTO_INSCRIPTION ="INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,administrateur,credit)"
-			+ "VALUES(?,?,?,?,?,?,?,?,?,0,?);";
+			+ "VALUES(?,?,?,?,?,?,?,?,?,100,?);";
   
 	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE ( pseudo = ? OR  email = ?) AND  mot_de_passe =  ?;";
 
