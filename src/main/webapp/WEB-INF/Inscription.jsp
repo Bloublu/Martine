@@ -11,7 +11,7 @@
 <h1>Formulaire d'inscription</h1>
 
 
-<form action="./Inscription" action="POST">
+<form action="./Inscription" method="POST">
 
 	<div class="colonneG">
 

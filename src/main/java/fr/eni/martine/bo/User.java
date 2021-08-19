@@ -12,9 +12,10 @@ public class User {
 	private String codepostal;
 	private String ville;
 	private String MotDePasse;
+	private byte admnistrateur;
 	
 	private int credit;
-	private boolean adm;
+	
 
 
 	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
@@ -31,7 +32,7 @@ public class User {
 		this.ville = ville;
 		MotDePasse = motDePasse;
 		this.credit = credit;
-		this.adm = adm;
+		
 	}
 
 
@@ -46,7 +47,7 @@ public class User {
 		this.rue = rue;
 		this.codepostal = codepostal;
 		this.ville = ville;
-		MotDePasse = motDePasse;
+		this.MotDePasse = motDePasse;
 	}
 
 
@@ -58,6 +59,26 @@ public class User {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+
+	public byte getAdmnistrateur() {
+		return admnistrateur;
+	}
+
+
+	public void setAdmnistrateur(byte admnistrateur) {
+		this.admnistrateur = admnistrateur;
+	}
+
+
+	public int getCredit() {
+		return credit;
+	}
+
+
+	public void setCredit(int credit) {
+		this.credit = credit;
 	}
 
 
@@ -151,14 +172,7 @@ public class User {
 	}
 
 
-	public boolean isAdm() {
-		return adm;
-	}
-
-
-	public void setAdm(boolean adm) {
-		this.adm = adm;
-	}
+	
 
 
 

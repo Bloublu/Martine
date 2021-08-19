@@ -4,16 +4,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-import fr.eni.martine.bll.ConnectionManager;
+
+
 import fr.eni.martine.bo.User;
 
 public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
-	final static String INSERT_INTO_INSCRIPTION ="INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,codepostal,ville,motdepasse)"
-			+ "VALUES(?,?,?,?,?,?,?,?,?);";
+	final static String INSERT_INTO_INSCRIPTION ="INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,administrateur,credit)"
+			+ "VALUES(?,?,?,?,?,?,?,?,?,0,?);";
   
 	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE ( pseudo = ? OR  email = ?) AND  mot_de_passe =  ?;";
 
@@ -64,8 +63,8 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	 		
 	 	PreparedStatement pSt = cnx.prepareStatement(INSERT_INTO_INSCRIPTION);
 	 	
-	 	pSt.setString(1, user.getPseudo());
-        pSt.setString(2, user.getNom());
+	 	pSt.setString(1,user.getPseudo());
+        pSt.setString(2,user.getNom());
         pSt.setString(3,user.getPrenom());
         pSt.setString(4,user.getEmail());
         pSt.setString(5,user.getTelephone());
@@ -73,6 +72,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
         pSt.setString(7,user.getCodepostal());
         pSt.setString(8,user.getVille());
         pSt.setString(9,user.getMotDePasse());
+        pSt.setInt(10,user.getCredit());
         
          pSt.executeUpdate();
        
