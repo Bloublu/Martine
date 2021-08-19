@@ -14,25 +14,47 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 	final static String INSERT_INTO_INSCRIPTION ="INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,codepostal,ville,motdepasse)"
 			+ "VALUES(?,?,?,?,?,?,?,?,?);";
+  
+	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE ( pseudo = ? OR  email = ?) AND  mot_de_passe =  ?;";
 
-	 final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE (pseudo = ? OR email = ?) AND mot_de_passe = ?;";
 	    
 
 	 @Override
-	 	public Boolean ConnectionUser(String identifiant, String Mdp) throws DalException{
-	 		Boolean CUser = false;
+	 	public User ConnectionUser(String identifiant, String Mdp) throws DalException{
+	 		
+	 		User CUser = null;
 	 		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
 	             PreparedStatement pStmt = cnx.prepareStatement(SELECT_USER);
 	             pStmt.setString(1, identifiant);
 	             pStmt.setString(2, identifiant);
 	             pStmt.setString(3, Mdp);
 	             ResultSet rs = pStmt.executeQuery();
-	            CUser = rs.next();
+	            
+	            while (rs.next()) {
+	            	CUser = new User(
+	            			rs.getInt("no_utilisateur"),
+	            			rs.getString("pseudo"),
+	            			rs.getString("nom"),
+	            			rs.getString("prenom"),
+	            			rs.getString("email"),
+	            			rs.getString("telephone"),
+	            			rs.getString("rue"),
+	            			rs.getString("code_postal"),
+	            			rs.getString("ville"),
+	            			rs.getString("mot_de_passe"),
+	            			rs.getInt("credit"),
+	            			rs.getBoolean("administrateur")
+	            			);
+	            }
 	             }
-	          catch (Exception e) {
+	          catch (SQLException e) {
 	             e.printStackTrace();
-	             throw new DalException("erreur dans la méthode ConnectionUser");	
-	 	}return CUser;
+
+	             throw new DalException(e.getMessage());
+	
+	 	}
+	 		return CUser;
+
 
 	}
 	 
@@ -64,11 +86,6 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	}
 }
 
-	
-	
-	
-	
-	
 	
 	
 	

@@ -2,30 +2,62 @@ package fr.eni.martine.bo;
 
 public class User {
 
+	private int id;
 	private String pseudo;
-	private String email;
-	private String MotDePasse;
-	private String prenom;
-	private String rue;
-	private String telephone;
 	private String nom;
+	private String prenom;
+	private String email;
+	private String telephone;
+	private String rue;
 	private String codepostal;
 	private String ville;
-	public String getIdentifiant;
+	private String MotDePasse;
 	
-	
-	public User(String pseudo, String email, String motDePasse, String prenom, String rue, String téléphone, String nom,
-			String codepostal, String ville) {
+	private int credit;
+	private boolean adm;
+
+
+	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codepostal, String ville, String motDePasse, int credit, boolean adm) {
 		super();
+		this.id = id;
 		this.pseudo = pseudo;
-		this.email = email;
-		this.MotDePasse = motDePasse;
-		this.prenom = prenom;
-		this.rue = rue;
-		this.telephone = téléphone;
 		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
 		this.codepostal = codepostal;
 		this.ville = ville;
+		MotDePasse = motDePasse;
+		this.credit = credit;
+		this.adm = adm;
+	}
+
+
+	public User(String pseudo, String nom, String prenom, String email, String telephone, String rue, String codepostal,
+			String ville, String motDePasse) {
+		super();
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codepostal = codepostal;
+		this.ville = ville;
+		MotDePasse = motDePasse;
+	}
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
@@ -39,23 +71,13 @@ public class User {
 	}
 
 
-	public String getEmail() {
-		return email;
+	public String getNom() {
+		return nom;
 	}
 
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getMotDePasse() {
-		return MotDePasse;
-	}
-
-
-	public void setMotDePasse(String motDePasse) {
-		MotDePasse = motDePasse;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
 
@@ -69,13 +91,13 @@ public class User {
 	}
 
 
-	public String getRue() {
-		return rue;
+	public String getEmail() {
+		return email;
 	}
 
 
-	public void setRue(String rue) {
-		this.rue = rue;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 
@@ -84,18 +106,18 @@ public class User {
 	}
 
 
-	public void setTelephone(String téléphone) {
-		this.telephone = téléphone;
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
 	}
 
 
-	public String getNom() {
-		return nom;
+	public String getRue() {
+		return rue;
 	}
 
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setRue(String rue) {
+		this.rue = rue;
 	}
 
 
@@ -117,8 +139,28 @@ public class User {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	
-	
+
+
+	public String getMotDePasse() {
+		return MotDePasse;
+	}
+
+
+	public void setMotDePasse(String motDePasse) {
+		MotDePasse = motDePasse;
+	}
+
+
+	public boolean isAdm() {
+		return adm;
+	}
+
+
+	public void setAdm(boolean adm) {
+		this.adm = adm;
+	}
+
+
 
 
 	
