@@ -7,25 +7,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import fr.eni.martine.bo.User;
 
-
-@WebServlet("/Accueil")
-public class AccueilServlet extends HttpServlet {
+@WebServlet("/Profil")
+public class ServletProfil extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-	
     
-    public AccueilServlet() {
+    public ServletProfil() {
         super();
-        
         
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
+		request.getSession().getAttribute("User");
+		
+		request.getRequestDispatcher("/WEB-INF/Profil.jsp").forward(request, response);
 	}
 
 	

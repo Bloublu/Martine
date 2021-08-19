@@ -16,7 +16,7 @@
 	<div class="colonneG">
 
 		<label for="pseudo">Pseudo : </label>
-		<input type="text" name="pseudo" placeholder="Soyez imaginatif" size="30" maxlength="50"><br>
+		<input  type="text" name="pseudo" placeholder="Soyez imaginatif" size="30" maxlength="50"><br>
 		<br>
 		<label for="prenom">Prenom : </label>
 		<input type="text" name="prenom" placeholder="Mettez votre prenom" size="30" maxlength="50"><br>
@@ -53,12 +53,10 @@
 	
 	<div class="button">
 		<button class="creer" type="submit">Créer</button>
-
-		<button class="annuler" type="submit">Annuler</button>
 	</div>
-	
-</form>
 
+</form>
+<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
 <br>
 
 

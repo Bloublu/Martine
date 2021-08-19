@@ -28,11 +28,37 @@ String codepostal,String ville, String email) throws BllException {
 
 	try {
 		this.connectUDAO.CreateUser(user);
+		
 	} catch (DalException e) {
-		// TODO Auto-generated catch block
+		
 		e.printStackTrace();
 	}
 	
 	}
 
+	
+	public boolean Validation1(String str) throws BllException {
+		char[] charTab = str.toCharArray();
+      
+		boolean isAlpha = true;
+      
+		for (char c : charTab) {
+     	
+       if (!Character.isAlphabetic(c))
+		isAlpha = false;   
+      }
+		
+      return isAlpha;
+        }
+
+
+	
 }
+
+
+
+
+
+
+
+

@@ -49,6 +49,10 @@ public class ServletInscription extends HttpServlet {
 				
 				//On apelle la couche BLL
 				this.inscriptionmanager.CreateUser(pseudo, motdepasse, prenom, rue, telephone, nom, codepostal, ville, email);
+				
+				
+
+
 							
 				} catch (BllException e) {
 					
@@ -56,6 +60,8 @@ public class ServletInscription extends HttpServlet {
 				}
 				
 				request.getRequestDispatcher("/WEB-INF/Inscription.jsp").forward(request, response);
+				
+
 	}
 
 }
