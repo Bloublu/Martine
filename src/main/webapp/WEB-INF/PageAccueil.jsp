@@ -16,13 +16,14 @@
 	
 <a href = "./private/NouvelleVente">Nouvelle vente</a><br><br>
 
+<c:if test="${empty User }">
 <a href = "./connection">Connexion</a><br><br>
+</c:if>
 
 
 
-
-<c:if test="${User }">
-	<a href = "./AccueilServlet">Deconnexion</a>
+<c:if test="${!empty User}">
+	<a href = "./Deconnexion">Deconnexion</a>
 </c:if>
 
 

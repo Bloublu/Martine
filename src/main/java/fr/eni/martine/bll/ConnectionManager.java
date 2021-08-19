@@ -21,7 +21,7 @@ public class ConnectionManager {
 		}catch(DalException e) {
 			
 			e.printStackTrace();
-			throw new BllException("Problème de validation du profil. Note technique : " + e.getMessage());
+			throw new BllException("Probleme de validation du profil. Note technique : " + e.getMessage());
 		}
 		return CUserBll;
 	}
