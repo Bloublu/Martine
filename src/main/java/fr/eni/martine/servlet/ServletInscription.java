@@ -1,14 +1,18 @@
 package fr.eni.martine.servlet;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bll.InscriptionManager;
-import fr.eni.martine.servlet.BLLExeception.BllException;
+import fr.eni.martine.bo.User;
 
 
 @WebServlet("/Inscription")
@@ -47,21 +51,19 @@ public class ServletInscription extends HttpServlet {
 				String codepostal = request.getParameter("codepostal");
 				String ville = request.getParameter("ville");
 				
+								
 				//On apelle la couche BLL
 				this.inscriptionmanager.CreateUser(pseudo, motdepasse, prenom, rue, telephone, nom, codepostal, ville, email);
-				
-				
-
-
-							
+				request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);				
+					
 				} catch (BllException e) {
 					
 					e.printStackTrace();
+					request.setAttribute("message", e.getMessage());
+					request.getRequestDispatcher("/WEB-INF/Inscription.jsp").forward(request, response);
 				}
-				
-				request.getRequestDispatcher("/WEB-INF/Inscription.jsp").forward(request, response);
-				
-
+		
+		
 	}
-
+	
 }

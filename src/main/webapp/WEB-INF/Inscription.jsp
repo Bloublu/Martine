@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,10 @@
 
 		<label for="pseudo">Pseudo : </label>
 		<input  type="text" name="pseudo" placeholder="Soyez imaginatif" size="30" maxlength="50"><br>
+		<br>
+		
+		<span class="message"> ${message}</span><br>
+		
 		<br>
 		<label for="prenom">Prenom : </label>
 		<input type="text" name="prenom" placeholder="Mettez votre prenom" size="30" maxlength="50"><br>

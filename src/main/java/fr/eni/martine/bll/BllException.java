@@ -1,6 +1,6 @@
 package fr.eni.martine.bll;
 
-import java.util.List;
+
 
 public class BllException extends Exception {
 
@@ -9,16 +9,7 @@ public class BllException extends Exception {
 		
 	}
 	
-	//public List <String> ListeError() throws BllException {
-		
-		
-		
-		
-		
-		
+
+
 	}
 
-	
-	
-	
-//}
