@@ -1,6 +1,7 @@
 package fr.eni.martine.servlet;
 
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -18,24 +19,28 @@ import fr.eni.martine.bo.User;
 @WebServlet("/Accueil")
 public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+   
+	private ListEnchereManager listManager;   
 	
     
     public AccueilServlet() {
         super();
-        
+        this.listManager = new ListEnchereManager();
         
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		List<Enchere> enchereList= null;
 		try {
-			List<Enchere> enchereList = ListEnchereManager.getEnchere();
+			enchereList = ListEnchereManager.getEnchere();
 		} catch (BllException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
+		
+		request.setAttribute("enchereList", enchereList);
 		
 		request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
 	}
@@ -43,7 +48,7 @@ public class AccueilServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		doGet(request,response);
 	}
 
 }

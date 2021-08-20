@@ -15,7 +15,7 @@ public class ListEnchereManager {
 	
 	
 	
-	public ListEnchereManager(ConnectUDAO udaoConnect) {
+	public ListEnchereManager( ) {
 		super();
 		this.udaoConnect = DAOFactory.getArticleDAO();
 	}

@@ -54,7 +54,7 @@ public class ServletConnection extends HttpServlet {
 					HttpSession session = request.getSession();
 						session.setAttribute("user", connectUser);
 					
-					request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);
+					request.getRequestDispatcher("./Accueil").forward(request, response);
 
 				}
 				else {

@@ -13,9 +13,34 @@ public class User {
 	private String ville;
 	private String MotDePasse;
 	private byte admnistrateur;
-	
 	private int credit;
+	private Article article;
+	private Enchere enchere;
 	
+	
+	
+	
+
+
+	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codepostal, String ville, String motDePasse, byte admnistrateur, int credit, Article article,
+			Enchere enchere) {
+		super();
+		this.id = id;
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codepostal = codepostal;
+		this.ville = ville;
+		MotDePasse = motDePasse;
+		this.admnistrateur = admnistrateur;
+		this.credit = credit;
+		this.article = article;
+		this.enchere = enchere;
+	}
 
 
 	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
