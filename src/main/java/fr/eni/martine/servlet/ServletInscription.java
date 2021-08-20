@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.martine.bll.InscriptionManager;
-import fr.eni.martine.servlet.BLLExeception.BllException;
+import fr.eni.martine.servlet.ServletExeception.BllException;
 
 
 @WebServlet("/Inscription")

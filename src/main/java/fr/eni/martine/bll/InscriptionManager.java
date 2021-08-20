@@ -4,7 +4,7 @@ import fr.eni.martine.bo.User;
 import fr.eni.martine.dal.ConnectUDAO;
 import fr.eni.martine.dal.DAOFactory;
 import fr.eni.martine.dal.DalException;
-import fr.eni.martine.servlet.BLLExeception.BllException;
+import fr.eni.martine.servlet.ServletExeception.BllException;
 
 public class InscriptionManager {
 

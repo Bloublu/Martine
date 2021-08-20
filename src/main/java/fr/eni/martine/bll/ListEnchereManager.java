@@ -3,16 +3,26 @@ package fr.eni.martine.bll;
 import java.util.List;
 
 import fr.eni.martine.bo.Enchere;
+import fr.eni.martine.dal.ConnectUDAO;
 import fr.eni.martine.dal.DAOFactory;
 import fr.eni.martine.dal.DalException;
 
 public class ListEnchereManager {
 
+	private ConnectUDAO udaoConnect;
 	
 	
 	
 	
-	public List<Enchere> getEnchere() throws BllException {
+	
+	public ListEnchereManager(ConnectUDAO udaoConnect) {
+		super();
+		this.udaoConnect = DAOFactory.getArticleDAO();
+	}
+
+
+
+	public static List<Enchere> getEnchere() throws BllException {
 		
 		List<Enchere> enchereList = null;
 		try {
