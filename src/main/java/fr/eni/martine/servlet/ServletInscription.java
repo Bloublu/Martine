@@ -12,7 +12,11 @@ import javax.servlet.http.HttpSession;
 
 import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bll.InscriptionManager;
+
 import fr.eni.martine.bo.User;
+
+
+
 
 
 @WebServlet("/Inscription")

@@ -8,6 +8,7 @@ import fr.eni.martine.dal.ConnectUDAO;
 import fr.eni.martine.dal.DAOFactory;
 import fr.eni.martine.dal.DalException;
 
+
 public class InscriptionManager {
 
 	private ConnectUDAO connectUDAO;
