@@ -122,10 +122,8 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
                      article = new Article(
                     		 rs.getString("nom_article"),
                     		 rs.getString("description"),	        
-                    		 rs.getDate("date_debut_enchere").toLocalDate(),
-							 rs.getTime("date_debut_enchere").toLocalTime(),
-						    	rs.getDate("date_fin_enchere").toLocalDate(),
-							 rs.getTime("date_fin_enchere").toLocalTime(),	                    		 
+                    		 rs.getTime("date_debut_enchere").toLocalTime(),
+						    	rs.getTime("date_fin_enchere").toLocalTime(),	                    		 
                     		 rs.getInt("prix_initial"),
                     		 rs.getInt("prix_vente"),
                     		 rs.getInt("no_categorie"),
@@ -158,8 +156,8 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 		}
 		return enchereList;
 		
-		
+	 }
 
-}
+	 }
 	
 
