@@ -34,14 +34,14 @@
 <c:if test="${!empty enchereList }"> 
 	<ul>
 			<c:forEach items="${enchereList}" var="enchere">
-			<li>
+			<a href="#"><li>
    			 <p> date enchere : ${enchere.dateEnchere} </p>
    			 <p> heure enchere : ${enchere.timeEnchere} </p>
-   			 <p> montant enchere : ${enchere.montantEnchere} </p>
+   			 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
    			
    			 <p> prenom nom du vendeur : "${enchere.user.nom}" "${enchere.user.prenom}" </p>
    			 <p> nom article : "${enchere.article.nomArticle}"</p>
-   			 </li>
+   		 </li></a>
 			</c:forEach>
 	</ul>
 </c:if>			
