@@ -1,14 +1,13 @@
 package fr.eni.martine.bo;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
-import java.time.LocalTime;
+
 
 
 public class Enchere {
 
-	private LocalTime timeEnchere;
-	private LocalDate dateEnchere;
+	private LocalDateTime dateEnchere;
 	private int montantEnchere;
 	private User user;
 	private Article article;
@@ -18,9 +17,8 @@ public class Enchere {
 
 
 
-	public Enchere(LocalTime timeEnchere, LocalDate dateEnchere, int montantEnchere, User user, Article article) {
+	public Enchere(LocalDateTime dateEnchere, int montantEnchere, User user, Article article) {
 		super();
-		this.timeEnchere = timeEnchere;
 		this.dateEnchere = dateEnchere;
 		this.montantEnchere = montantEnchere;
 		this.user = user;
@@ -28,9 +26,8 @@ public class Enchere {
 	}
 
 
-	public Enchere(LocalDate dateEnchere, LocalTime timeEnchere, int montantEnchere) {
+	public Enchere(LocalDateTime dateEnchere, int montantEnchere) {
 		super();
-		this.timeEnchere = timeEnchere;
 		this.dateEnchere = dateEnchere;
 		this.montantEnchere = montantEnchere;
 	}
@@ -38,12 +35,12 @@ public class Enchere {
 
 
 
-	public LocalDate getDateEnchere() {
+	public LocalDateTime getDateEnchere() {
 		return dateEnchere;
 	}
 
 
-	public void setDateEnchere(LocalDate dateEnchere) {
+	public void setDateEnchere(LocalDateTime dateEnchere) {
 		this.dateEnchere = dateEnchere;
 	}
 
@@ -56,17 +53,6 @@ public class Enchere {
 	public void setMontantEnchere(int montantEnchere) {
 		this.montantEnchere = montantEnchere;
 	}
-
-
-	public LocalTime getTimeEnchere() {
-		return timeEnchere;
-	}
-
-
-	public void setTimeEnchere(LocalTime timeEnchere) {
-		this.timeEnchere = timeEnchere;
-	}
-
 
 	public User getUser() {
 		return user;

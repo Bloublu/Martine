@@ -8,4 +8,8 @@ public class DAOFactory {
 	    }
 
 
+	    public static EnchereDAO getEnchereDAO() {
+	    	EnchereDAO eDAO = new EnchereDAOJdbc();
+	    	return eDAO;
+	    }
 }

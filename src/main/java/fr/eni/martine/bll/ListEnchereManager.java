@@ -28,7 +28,7 @@ public class ListEnchereManager {
 		try {
 			
 		
-			enchereList = DAOFactory.getArticleDAO().selectAll();
+			enchereList = DAOFactory.getEnchereDAO().selectAll();
 			
 		}catch(DalException e) {
 			

@@ -1,16 +1,16 @@
 package fr.eni.martine.bo;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+
+import java.time.LocalDateTime;
+
 
 public class Article {
 
+	private int noArticle;
 	private String nomArticle;
 	private String description;
-	private LocalTime timeDebutEnchere;
-	private LocalDate dateDebutEnchere;
-	private LocalTime timeFinEnchere;
-	private LocalDate dateFinEnchere;
+	private LocalDateTime DebutEnchere;
+	private LocalDateTime FinEnchere;
 	private int prixInitial;
 	private int prixVente;
 	private int categorie;
@@ -18,26 +18,19 @@ public class Article {
 	private String image;
 	
 	
-	public Article(String nomArticle, String description, LocalTime timeDebutEnchere,
-			LocalTime timeFinEnchere,int prixInitial, int prixVente, int categorie,
-			String etatVente, String image) {
+	public Article(String nomArticle, String description, LocalDateTime debutEnchere, LocalDateTime finEnchere,
+			int prixInitial, int prixVente, int categorie, String etatVente, String image) {
 		super();
 		this.nomArticle = nomArticle;
 		this.description = description;
-		this.timeDebutEnchere = timeDebutEnchere;
-		this.dateDebutEnchere = dateDebutEnchere;
-		this.timeFinEnchere = timeFinEnchere;
-		this.dateFinEnchere = dateFinEnchere;
+		DebutEnchere = debutEnchere;
+		FinEnchere = finEnchere;
 		this.prixInitial = prixInitial;
 		this.prixVente = prixVente;
 		this.categorie = categorie;
 		this.etatVente = etatVente;
 		this.image = image;
-		
 	}
-
-
-
 
 
 	public String getNomArticle() {
@@ -45,7 +38,7 @@ public class Article {
 	}
 
 
-	public void setNomArticle(String nomArtile) {
+	public void setNomArticle(String nomArticle) {
 		this.nomArticle = nomArticle;
 	}
 
@@ -60,43 +53,23 @@ public class Article {
 	}
 
 
-	public LocalTime getTimeDebutEnchere() {
-		return timeDebutEnchere;
+	public LocalDateTime getDebutEnchere() {
+		return DebutEnchere;
 	}
 
 
-	public void setTimeDebutEnchere(LocalTime timeDebutEnchere) {
-		this.timeDebutEnchere = timeDebutEnchere;
+	public void setDebutEnchere(LocalDateTime debutEnchere) {
+		DebutEnchere = debutEnchere;
 	}
 
 
-	public LocalDate getDateDebutEnchere() {
-		return dateDebutEnchere;
+	public LocalDateTime getFinEnchere() {
+		return FinEnchere;
 	}
 
 
-	public void setDateDebutEnchere(LocalDate dateDebutEnchere) {
-		this.dateDebutEnchere = dateDebutEnchere;
-	}
-
-
-	public LocalTime getTimeFinEnchere() {
-		return timeFinEnchere;
-	}
-
-
-	public void setTimeFinEnchere(LocalTime timeFinEnchere) {
-		this.timeFinEnchere = timeFinEnchere;
-	}
-
-
-	public LocalDate getDateFinEnchere() {
-		return dateFinEnchere;
-	}
-
-
-	public void setDateFinEnchere(LocalDate dateFinEnchere) {
-		this.dateFinEnchere = dateFinEnchere;
+	public void setFinEnchere(LocalDateTime finEnchere) {
+		FinEnchere = finEnchere;
 	}
 
 
@@ -150,6 +123,17 @@ public class Article {
 	}
 
 
+	public int getNoArticle() {
+		return noArticle;
+	}
+
+
+	public void setNoArticle(int noArticle) {
+		this.noArticle = noArticle;
+	}
+	
+	
+	
 	
 	
 	
