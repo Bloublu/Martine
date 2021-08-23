@@ -9,7 +9,7 @@ public class DAOFactory {
 
 
 	    public static EnchereDAO getEnchereDAO() {
-	    	EnchereDAO eDAO = new EnchereDAOJdbc();
+	    	EnchereDAO eDAO = new EnchereDAOJdbcImpl();
 	    	return eDAO;
 	    }
 }

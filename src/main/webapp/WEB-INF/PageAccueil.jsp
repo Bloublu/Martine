@@ -16,7 +16,7 @@
 	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
 	
 <div class="header">
-	<h3 class="liste">Chez Martine, On Chine !!</h3>
+	<h3>Chez Martine, On Chine !!</h3>
 	<h1 class="liste">Liste des enchères</h1>
 	
 	<div class="fonctionnalites">
@@ -39,16 +39,15 @@
 
 
 <c:if test="${!empty enchereList }"> 
-	<ul>
+	<ul class="ulEnchere">
 			<c:forEach items="${enchereList}" var="enchere">
-			<a href="#"><li>
+			<li class="liEnchere"><a href="#">
    			 <p> date enchere : ${enchere.dateEnchere} </p>
-   			 <p> heure enchere : ${enchere.timeEnchere} </p>
    			 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
    			
    			 <p> prenom nom du vendeur : "${enchere.user.nom}" "${enchere.user.prenom}" </p>
    			 <p> nom article : "${enchere.article.nomArticle}"</p>
-   		 </li></a>
+   			</a></li>
 			</c:forEach>
 	</ul>
 </c:if>			

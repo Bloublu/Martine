@@ -11,7 +11,7 @@ import fr.eni.martine.bo.Article;
 import fr.eni.martine.bo.Enchere;
 import fr.eni.martine.bo.User;
 
-public class EnchereDAOJdbc implements EnchereDAO {
+public class EnchereDAOJdbcImpl implements EnchereDAO {
 
 	
 	final static String SELECT_ENCHERE = "SELECT * FROM ENCHERES INNER JOIN ARTICLES_VENDUS ON ENCHERES.no_article = ARTICLES_VENDUS.no_article INNER JOIN UTILISATEURS ON ENCHERES.no_utilisateur = UTILISATEURS.no_utilisateur WHERE etat_vente = 'EC';";
