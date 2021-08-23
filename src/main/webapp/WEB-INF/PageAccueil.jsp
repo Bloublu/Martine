@@ -13,8 +13,9 @@
 </head>
 <body>
 <h1>Chez Martine !!</h1>
+
 	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
-	
+	<div class="mamartine"><img src="<c:url value="/images/mamartine.png"/>"/></div>
 <div class="header">
 	<h3>Chez Martine, On Chine !!</h3>
 	<h1 class="liste">Liste des enchères</h1>
