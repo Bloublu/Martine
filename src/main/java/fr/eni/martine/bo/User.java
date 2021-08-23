@@ -16,9 +16,6 @@ public class User {
 	private int credit;
 	
 	
-	
-	
-	
 
 
 	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
@@ -57,6 +54,7 @@ public class User {
 	}
 
 
+	
 	public User(String pseudo, String nom, String prenom, String email, String telephone, String rue, String codepostal,
 			String ville, String motDePasse) {
 		super();

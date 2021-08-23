@@ -1,5 +1,7 @@
 package fr.eni.martine.dal;
 
+import java.time.LocalDateTime;
+
 public class DAOFactory {
 
 	    public static ConnectUDAO getArticleDAO() { 
@@ -14,8 +16,9 @@ public class DAOFactory {
 	    }
 
 		public static ArticleDAO getNewArticleDAO() {
+			ArticleDAO articleDAO = new ArticleDAOJdbcImpl();
+			return articleDAO;
 			
-			return null;
 		}
 
 }
