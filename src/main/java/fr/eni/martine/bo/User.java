@@ -73,6 +73,20 @@ public class User {
 
 
 
+	public User(String pseudo, String nom, String prenom, String email, String telephone, String rue, String codepostal,
+			String ville) {
+		super();
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codepostal = codepostal;
+		this.ville = ville;
+	}
+
+
 	public int getId() {
 		return id;
 	}

@@ -44,7 +44,7 @@ public class ServletConnection extends HttpServlet {
 		String identifiant = request.getParameter("identifiant");
 		String motdepasse = request.getParameter("motdepasse");
 		
-		//String petitNom = user.getPseudo();
+		
 		//2-On apelle la couche BLL avec ces parametres 
 		try {
 

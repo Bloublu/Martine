@@ -77,7 +77,7 @@
 <input class="creer" type="submit" value="Enregistrer">
 </form>
 
-<a href="/PageAccueil.jsp">Annuler</a><br><br>
+<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
 
 </body>
 </html>

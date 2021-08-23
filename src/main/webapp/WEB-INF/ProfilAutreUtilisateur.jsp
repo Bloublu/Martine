@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+    <%@page import="fr.eni.martine.bo.Enchere" %>
+	<%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,8 +13,10 @@
 
 <h1>Mon Profil</h1>
 
-<h2> ${user.pseudo}</h2> 
-<p><p>
+<p>${user.nom}</p> 
+
+
+
 
 
 </body>
