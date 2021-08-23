@@ -38,7 +38,7 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 	 	pSt.setString(9,articleAVendre.getImage());
 	 	
 	 	
-         pSt.executeUpdate();
+        pSt.executeUpdate();
         
 	 	} catch (SQLException e) {
 	 		

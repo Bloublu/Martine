@@ -1,30 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-  
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@page import="fr.eni.martine.bo.Enchere" %>
+<%@page import="java.util.List" %> 
+
+ 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<link href="./CSS/nouvelleVente.css" rel="stylesheet">
 <title>Nouvelle vente</title>
-<link rel="stylesheet" href="css/nouvelleVente.css" />
 </head>
+
 <body>
 
-
-
-<a href="/Encheres">Retour Liste des enchères</a>
-<a href ="/Accueil">Deconnexion</a>
-
-
-
-
-<h1>Nouvelle vente</h1>
-
-<h3>ENI-Enchères</h3>
-
-
 <form action="./NouvelleVente" method="POST">
+
+
+<div class="header">
+<h1>Nouvelle vente</h1>
+<h3>ENI-Enchères</h3><br><br>
+</div>
 
 
 		<label for="article">Article : </label>
@@ -32,7 +29,8 @@
 		<br>
 		
 		<label for="description">Description : </label>
-		<input type="text" name="description" placeholder="Décrivez votre article" size="70" maxlength="70"><br>
+		<textarea name="description" id="description" rows="10" cols="30"></textarea>
+		
 		<br>
 		
 		<label for="Catégorie">Catégorie :</label>
@@ -77,7 +75,8 @@
 <input class="creer" type="submit" value="Enregistrer">
 </form>
 
-<a href="/PageAccueil.jsp">Annuler</a><br><br>
+<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
+<br>
 
 </body>
 </html>

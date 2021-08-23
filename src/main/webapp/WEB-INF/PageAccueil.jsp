@@ -21,7 +21,7 @@
 	
 	<div class="fonctionnalites">
 	
-		<a class="vente" href = "./private/NouvelleVente">Nouvelle vente</a>
+		<a class="vente" href = "./NouvelleVente">Nouvelle vente</a>
 		<c:if test="${empty user}">
 			<a class="co" href = "./connection">Connexion</a>
 		</c:if>
