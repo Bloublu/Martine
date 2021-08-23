@@ -8,9 +8,14 @@ public class DAOFactory {
 
 	    }
 
-
-	    public static ArticleDAO getNewArticleDAO() { 
-	        ArticleDAO uDAO = new ArticleDAOJdbcImpl();
-	        return uDAO;
+	    public static EnchereDAO getEnchereDAO() {
+	    	EnchereDAO eDAO = new EnchereDAOJdbcImpl();
+	    	return eDAO;
 	    }
+
+		public static ArticleDAO getNewArticleDAO() {
+			
+			return null;
+		}
+
 }

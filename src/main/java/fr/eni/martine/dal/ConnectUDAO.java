@@ -14,7 +14,7 @@ public interface ConnectUDAO {
 
 	public void CreateUser (User user)throws DalException;	
 
-	public List<Enchere> selectAll() throws DalException;
+
 	
 	
 }

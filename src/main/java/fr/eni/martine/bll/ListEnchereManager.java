@@ -6,10 +6,11 @@ import fr.eni.martine.bo.Enchere;
 import fr.eni.martine.dal.ConnectUDAO;
 import fr.eni.martine.dal.DAOFactory;
 import fr.eni.martine.dal.DalException;
+import fr.eni.martine.dal.EnchereDAO;
 
 public class ListEnchereManager {
 
-	private ConnectUDAO udaoConnect;
+	private EnchereDAO daoEnchere;
 	
 	
 	
@@ -17,7 +18,7 @@ public class ListEnchereManager {
 	
 	public ListEnchereManager( ) {
 		super();
-		this.udaoConnect = DAOFactory.getArticleDAO();
+		this.daoEnchere = DAOFactory.getEnchereDAO();
 	}
 
 
@@ -28,7 +29,7 @@ public class ListEnchereManager {
 		try {
 			
 		
-			enchereList = DAOFactory.getArticleDAO().selectAll();
+			enchereList = DAOFactory.getEnchereDAO().selectAll();
 			
 		}catch(DalException e) {
 			
