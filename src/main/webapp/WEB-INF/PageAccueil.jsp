@@ -7,28 +7,34 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="./CSS/accueil.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
 <title>Accueil</title>
 </head>
 <body>
 
-<h1>ACCUEIL</h1>
-<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
-
+	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
 	
-<a href = "./private/NouvelleVente">Nouvelle vente</a><br><br>
+<div class="header">
+	<h1 class="liste">Liste des enchères</h1>
+	
+	<div class="fonctionnalites">
+	
+		<a class="vente" href = "./private/NouvelleVente">Nouvelle vente</a>
+		<c:if test="${empty user}">
+			<a class="co" href = "./connection">Connexion</a>
+		</c:if>
 
-<c:if test="${empty user}">
-<a href = "./connection">Connexion</a><br><br>
-</c:if>
+		  <a class="inscription" href ="./Inscription">Inscription</a>
+
+		<c:if test="${!empty user}">
+			<a class="profil" href  ="./Profil">Profil</a>
+			<a class ="deco" href = "./Deconnection">Deconnexion</a>
+		</c:if>
+	</div>
+</div>
 
 
-
-
-<c:if test="${!empty user}">
-	<a href ="./Profil">Profil</a><br>
-	<a href = "./Deconnection">Deconnexion</a><br>
-</c:if>
 
 
 <c:if test="${!empty enchereList }"> 

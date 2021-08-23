@@ -36,9 +36,6 @@ public class Enchere {
 	}
 
 
-	public Enchere() {
-		// TODO Auto-generated constructor stub
-	}
 
 
 	public LocalDate getDateEnchere() {

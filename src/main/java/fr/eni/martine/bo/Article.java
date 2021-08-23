@@ -18,8 +18,8 @@ public class Article {
 	private String image;
 	
 	
-	public Article(String nomArticle, String description, LocalDate dateDebutEnchere,LocalTime timeDebutEnchere,
-			LocalDate dateFinEnchere, LocalTime timeFinEnchere,int prixInitial, int prixVente, int categorie,
+	public Article(String nomArticle, String description, LocalTime timeDebutEnchere,
+			LocalTime timeFinEnchere,int prixInitial, int prixVente, int categorie,
 			String etatVente, String image) {
 		super();
 		this.nomArticle = nomArticle;
