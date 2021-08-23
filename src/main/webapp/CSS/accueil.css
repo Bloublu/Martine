@@ -1,5 +1,17 @@
 @charset "ISO-8859-1";
 
+
+body{
+background-image:url(WEB-INF/mamies-funky.jpg);	
+	
+	
+	
+}
+
+
+
+
+
 h1{
 text-align: center;
 }

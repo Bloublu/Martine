@@ -45,7 +45,7 @@
    			 <p> date enchere : ${enchere.dateEnchere} </p>
    			 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
    			
-   			 <p> prenom nom du vendeur : <a href="./Profil">"${enchere.user.nom}" "${enchere.user.prenom}"</a></p>
+   			 <p> prenom nom du vendeur : <a href="./Profil?idutilisateur=${enchere.user.id}">"${enchere.user.nom}" "${enchere.user.prenom}"</a></p>
    			 <p> nom article : "${enchere.article.nomArticle}"</p>
    			</a></li>
 			</c:forEach>
