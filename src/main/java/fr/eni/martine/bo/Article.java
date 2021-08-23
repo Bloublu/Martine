@@ -15,11 +15,12 @@ public class Article {
 	private int prixVente;
 	private int categorie;
 	private String etatVente;
+	private int no_utilisateur;
 	private String image;
 	
 	
 	public Article(String nomArticle, String description, LocalDateTime debutEnchere, LocalDateTime finEnchere,
-			int prixInitial, int prixVente, int categorie, String etatVente, String image) {
+			int prixInitial, int prixVente, int categorie, String etatVente, int no_utilisateur, String image) {
 		super();
 		this.nomArticle = nomArticle;
 		this.description = description;
@@ -29,8 +30,28 @@ public class Article {
 		this.prixVente = prixVente;
 		this.categorie = categorie;
 		this.etatVente = etatVente;
+		this.no_utilisateur = no_utilisateur;
 		this.image = image;
 	}
+
+	
+	
+
+	
+	public int getNo_utilisateur() {
+		return no_utilisateur;
+	}
+
+
+
+
+
+	public void setNo_utilisateur(int no_utilisateur) {
+		this.no_utilisateur = no_utilisateur;
+	}
+
+
+
 
 
 	public String getNomArticle() {
