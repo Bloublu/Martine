@@ -26,6 +26,8 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 	final static String SELECT_ENCHERE = "SELECT * FROM ENCHERES INNER JOIN ARTICLES_VENDUS ON ENCHERES.no_article = ARTICLES_VENDUS.no_article INNER JOIN UTILISATEURS ON ENCHERES.no_utilisateur = UTILISATEURS.no_utilisateur WHERE etat_vente = 'EC';";
 
+	
+	
 	@Override
  	public User ConnectionUser(String identifiant, String Mdp) throws DalException{
  		
@@ -81,6 +83,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 				pSt.setString(8, user.getVille());
 				pSt.setString(9, user.getMotDePasse());
 				pSt.setInt(10, user.getCredit());
+				pSt.setInt(10, 100);
 
 				pSt.executeUpdate();
 

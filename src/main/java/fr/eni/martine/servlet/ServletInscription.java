@@ -54,10 +54,11 @@ public class ServletInscription extends HttpServlet {
 				String nom = request.getParameter("nom");
 				String codepostal = request.getParameter("codepostal");
 				String ville = request.getParameter("ville");
+				String motpasseconfirmation = request.getParameter("motpasseconfirmation");
 				
 								
 				//On apelle la couche BLL
-				this.inscriptionmanager.CreateUser(pseudo, motdepasse, prenom, rue, telephone, nom, codepostal, ville, email);
+				this.inscriptionmanager.CreateUser(pseudo, motdepasse, prenom, rue, telephone, nom, codepostal, ville, email, motpasseconfirmation);
 				request.getRequestDispatcher("/WEB-INF/PageAccueil.jsp").forward(request, response);				
 					
 				} catch (BllException e) {
@@ -65,9 +66,6 @@ public class ServletInscription extends HttpServlet {
 					e.printStackTrace();
 					request.setAttribute("message", e.getMessage());
 					request.getRequestDispatcher("/WEB-INF/Inscription.jsp").forward(request, response);
-				}
-		
-		
+		}
 	}
-	
 }
