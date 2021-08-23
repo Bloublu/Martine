@@ -12,12 +12,14 @@
 <title>Chez MARTINE !!</title>
 </head>
 <body>
+<div>
+<div class="mamartine"><img src="<c:url value="/images/Martine.jpg"/>"/></div>
 <h1>Chez Martine !!</h1>
-
+</div>
 	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
-	<div class="mamartine"><img src="<c:url value="/images/mamartine.png"/>"/></div>
+	
 <div class="header">
-	<h3>Chez Martine, On Chine !!</h3>
+	<h3>Chez Martine,<br> On Chine !!</h3>
 	<h1 class="liste">Liste des enchères</h1>
 	
 	<div class="fonctionnalites">
