@@ -9,13 +9,14 @@
 <head>
 <link href="./CSS/accueil.css" rel="stylesheet">
 <meta charset="ISO-8859-1">
-<title>Accueil</title>
+<title>Chez MARTINE !!</title>
 </head>
 <body>
-
+<h1>Chez Martine !!</h1>
 	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
 	
 <div class="header">
+	<h3 class="liste">Chez Martine, On Chine !!</h3>
 	<h1 class="liste">Liste des enchères</h1>
 	
 	<div class="fonctionnalites">
