@@ -21,7 +21,7 @@ public class AccueilServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	private ListEnchereManager listManager;   
-	
+
     
     public AccueilServlet() {
         super();
@@ -47,6 +47,8 @@ public class AccueilServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		
 		doGet(request,response);
 	}

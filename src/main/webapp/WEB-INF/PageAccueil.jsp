@@ -13,8 +13,9 @@
 </head>
 <body>
 <h1>Chez Martine !!</h1>
+
 	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
-	
+	<div class="mamartine"><img src="<c:url value="/images/mamartine.png"/>"/></div>
 <div class="header">
 	<h3>Chez Martine, On Chine !!</h3>
 	<h1 class="liste">Liste des enchères</h1>
@@ -45,7 +46,7 @@
    			 <p> date enchere : ${enchere.dateEnchere} </p>
    			 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
    			
-   			 <p> prenom nom du vendeur : "${enchere.user.nom}" "${enchere.user.prenom}" </p>
+   			 <p> prenom nom du vendeur : <a href="./Profil">"${enchere.user.nom}" "${enchere.user.prenom}"</a></p>
    			 <p> nom article : "${enchere.article.nomArticle}"</p>
    			</a></li>
 			</c:forEach>

@@ -18,6 +18,8 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 			+ " VALUES(?,?,?,?,?,?,?,?,?,0,?);";
 
 	final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE ( pseudo = ? OR  email = ?) AND  mot_de_passe =  ?;";
+	
+	private final static String SELECT_USER_UTILISATEURS = "SELECT pseudo,nom,prenom,email,telephone,rue,code_postal,ville FROM UTILISATEURS;";
 
 
 	@Override
@@ -93,7 +95,44 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 			}
 		}
 	 	
-	
+		public User SelectUtilisateur (String pseudo, String nom, String prenom, String email, String telephone, String rue , String code_postal, String ville ) throws DalException{
+	 		
+	 		User OtherUser = null;
+	 		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
+	             PreparedStatement pStmt = cnx.prepareStatement(SELECT_USER_UTILISATEURS);
+	             pStmt.setString(1, pseudo);
+	             pStmt.setString(2, nom);
+	             pStmt.setString(3, prenom);
+	             pStmt.setString(4, email);
+	             pStmt.setString(5, telephone);
+	             pStmt.setString(6, rue);
+	             pStmt.setString(7, code_postal);
+	             pStmt.setString(8, ville);
+	             ResultSet rs = pStmt.executeQuery();
+	            
+	            while (rs.next()) {
+	            	OtherUser = new User(
+	            			rs.getString("pseudo"),
+	            			rs.getString("nom"),
+	            			rs.getString("prenom"),
+	            			rs.getString("email"),
+	            			rs.getString("telephone"),
+	            			rs.getString("rue"),
+	            			rs.getString("code_postal"),
+	            			rs.getString("ville")
+	            			
+	            			);
+	            }
+	             }
+	          catch (SQLException e) {
+	             e.printStackTrace();
+
+	             throw new DalException(e.getMessage());
+
+	 	}
+	 		return OtherUser;
+
+	}
 
 	
 

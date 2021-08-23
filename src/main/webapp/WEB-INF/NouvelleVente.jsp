@@ -76,7 +76,7 @@
 </form>
 
 <button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
-<br>
+
 
 </body>
 </html>
