@@ -51,8 +51,8 @@
 		<label for="codepostal">Code Postal : </label>
 		<input type="text" name="codepostal" placeholder="Mettez votre Code Postal" size="30" maxlength="50"><br>
 		<br>
-		<label for="motdepasseconfirmation">Confirmation de Mot De Passe : </label>
-		<input type="text" name="motdepasseconfirmation" placeholder="Confirmation de Mot De Passe" size="30" maxlength="50"><br>
+		<label for="motpasseconfirmation">Confirmation de Mot De Passe : </label>
+		<input type="text" name="motpasseconfirmation" placeholder="Confirmation de Mot De Passe" size="30" maxlength="50"><br>
 		<br>
 	</div>
 	

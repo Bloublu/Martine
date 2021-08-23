@@ -4,13 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.time.LocalDateTime;
 
-import fr.eni.martine.bo.Article;
-import fr.eni.martine.bo.Enchere;
+
 import fr.eni.martine.bo.User;
 
 
@@ -23,6 +18,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 			+ " VALUES(?,?,?,?,?,?,?,?,?,0,?);";
 
 	final static String SELECT_USER = "SELECT * from UTILISATEURS WHERE ( pseudo = ? OR  email = ?) AND  mot_de_passe =  ?;";
+
 
 	@Override
  	public User ConnectionUser(String identifiant, String Mdp) throws DalException{
@@ -79,6 +75,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 				pSt.setString(8, user.getVille());
 				pSt.setString(9, user.getMotDePasse());
 				pSt.setInt(10, user.getCredit());
+				pSt.setInt(10, 100);
 
 				pSt.executeUpdate();
 

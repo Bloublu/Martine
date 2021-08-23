@@ -75,11 +75,7 @@ public class EnchereDAOJdbcImpl implements EnchereDAO {
 	 }
 	
 	
+}	
 	
 	
 	
-	
-	
-	
-	
-}
