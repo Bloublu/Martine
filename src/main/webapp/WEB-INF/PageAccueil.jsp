@@ -13,7 +13,7 @@
 </head>
 <body>
 <div>
-<div class="mamartine"><img src="<c:url value="/images/Martine.jpg"/>"/></div>
+<div class="mamartine"><a href="./Accueil"><img src="<c:url value="/images/Martine.jpg"/>"/></div></a>
 <h1>Chez Martine !!</h1>
 </div>
 	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
@@ -37,6 +37,54 @@
 		</c:if>
 	</div>
 </div>
+
+
+
+<form action="" method="post">
+<div class="recherch">
+<label for="filteEnchere">Filtre : </label><br>
+<input type="text" name="recherche" id="rech" placeholder="Le nom de l'article contient" size="30" maxlenght="80"><br>
+<label  for="favorite" class="cat" >Catégorie :</label>
+<select name="categ" size="1">
+
+<optgroup label="Maison">
+<option value="electromenager">electroménager</option>
+<option value="ameublement">Ameublement</option>
+<option value="jardin">Jardin</option>
+</optgroup>
+<optgroup label="Véhicules">
+<option value="Voiture">Voiture</option>
+<option value="Moto">Moto</option>
+<option value="Bateau">Bateau</option>
+</optgroup>
+<optgroup label="Mode">
+<option value="Vetement">Vetement</option>
+<option value="Chaussures">Chaussures</option>
+<option value="Montres & Bijoux">Montres & Bijoux</option>
+</optgroup>
+</select><br>
+<button type="submit" class="validRech">Rechercher</button><br>
+</div>
+<div class="radio">
+<div class="Rachat"><input type="radio" name="Achat"/>Achat</div>
+<div class="Rvente"><input type="radio" name="Ventes"/>Mes Ventes<br></div>
+</div>
+<div class="check">
+	<div class="Cachat">	
+		<input type="checkbox" name="ouverte" />encheres Ouvertes <br>
+		<input type="checkbox" name="encheres" />mes encheres<br>
+		<input type="checkbox" name="remporte" />mes enchères remportées <br>
+	</div>
+	<div class="Cvente">
+		<input type="checkbox" name="encours"/>mes ventes en cours <br>
+		<input type="checkbox" name="nonDebuter"/>ventes non débutées  <br>
+		<input type="checkbox" name="termine"/>ventes terminées  <br>
+	</div>
+</div>
+
+</form>
+
+
 
 
 

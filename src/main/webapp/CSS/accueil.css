@@ -6,12 +6,18 @@
 	height: auto;
 }
 
+
+body{
+background-color: #F7FCD6 ;	
+}
+
 h1{
 text-align: center;
+
 }
 
 .header{
-clear:left;
+
 display: flex;
 justify-content:space-between;	
 flex-direction: row;
@@ -31,7 +37,7 @@ border: 2px solid black;
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
 
 
 }
@@ -41,7 +47,7 @@ border: 2px solid black;
 padding:5px 5px 5px 5px;	 
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
 
 }
 
@@ -50,7 +56,7 @@ border: 2px solid black;
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
 
 }
 
@@ -59,7 +65,7 @@ border: 2px solid black;
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
 
 }
 .deco{
@@ -67,7 +73,7 @@ border: 2px solid black;
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;	
+margin:10px;	
 
 }
 .ulEnchere{
@@ -86,4 +92,58 @@ margin:25px 25px 25px 25px;
 h3{
 color:white;
 margin: 20px;
+}
+form{
+	bloc-align:justify;
+}
+.recherch{
+	display:flex;
+	justify-content:center;
+	margin-top:20px;
+	padding-top:10px;	
+}
+.check{
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+  	grid-gap: 10px;
+ 	 grid-auto-rows: minmax(100px, auto);
+
+	justify-content:center;
+	margin:20 px;
+}
+.validRech{
+	margin-left:100px;
+	padding:15px;
+}
+.cat{
+	margin-left:20px;
+}
+
+.radio{
+	
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+  	grid-gap: 10px;
+ 	 grid-auto-rows: minmax(100px, auto);
+
+}
+.Rachat{
+	margin: 10px;
+	grid-column: 2;
+  	grid-row: 0;
+}
+.Rvente{
+	margin: 10px;
+	grid-column: 3;
+  	grid-row: 0;
+}
+.Cachat{
+	margin: 10px;
+	grid-column: 2;
+  	grid-row: 0;
+}
+.Cvente{
+	margin: 10px;
+	grid-column: 3;
+  	grid-row: 0;
 }
