@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet("/ServletAjoutArticleValide")
-public class ServletAjoutArticleValide extends HttpServlet {
+@WebServlet("/DetailVente")
+public class ServletDetailVente extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
   
@@ -20,7 +20,7 @@ public class ServletAjoutArticleValide extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.getRequestDispatcher("/WEB-INF/ajoutArticle.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/detailVente.jsp").forward(request, response);
 	}
 
 	

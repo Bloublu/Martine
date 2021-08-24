@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import fr.eni.martine.bll.ArticleManager;
+import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bo.Article;
 import fr.eni.martine.bo.User;
 import fr.eni.martine.dal.DalException;
@@ -41,13 +42,15 @@ public class ServletNouvelleVente extends HttpServlet {
 
 	}
 		
-		
-		
+
 	/**
 	 * 
 	 * Méthode doPost Traite les données envoyées par le formulaire
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		User userConnecte = (User) request.getSession().getAttribute("connectUser");
+		int no_utilisateur = userConnecte.getId();
 		
 		try {
 			
@@ -59,10 +62,9 @@ public class ServletNouvelleVente extends HttpServlet {
 		int prix_initial = Integer.parseInt(request.getParameter("prix_initial"));
 		int no_categorie = Integer.parseInt(request.getParameter("no_categorie"));
 		// Récupérer no_utilisateur via le user :
-		HttpSession session = request.getSession();
-		User userConnecte = (User) session.getAttribute("user");
-		// int no_utilisateur = userConnecte.getId();
-		int no_utilisateur = 1;
+		// HttpSession session = request.getSession();
+		
+		//int no_utilisateur = 1;
 		String image = request.getParameter("image");
 		
 		
@@ -72,7 +74,7 @@ public class ServletNouvelleVente extends HttpServlet {
 		
 		
 				
-		} catch (DalException e) {
+		} catch (DalException | BllException e) {
 			
 			e.printStackTrace();
 		}
@@ -83,3 +85,5 @@ public class ServletNouvelleVente extends HttpServlet {
 
 	
 }
+
+//<input type="text" name="description" placeholder="Décrivez votre article" size="70" maxlength="70"><br>
