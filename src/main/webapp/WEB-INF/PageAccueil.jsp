@@ -12,15 +12,24 @@
 <title>Chez MARTINE !!</title>
 </head>
 <body>
-<div>
-<div class="mamartine"><img src="<c:url value="/images/Martine.jpg"/>"/></div>
-<h1>Chez Martine !!</h1>
+<div class="bloctitre">
+
+	<div class="">
+		<img src="<c:url value="/images/Martine.jpg"/>"/>
+		<h2 class="bienvenue">Bienvenue ${user.nom} ${user.prenom}</h2> 
+	</div>
+	
+	<div class="titre">
+		<h1 class="chezmartine">Chez Martine !!</h1>
+	</div>
+	
 </div>
-	<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
+	
 	
 <div class="header">
-	<h3>Chez Martine,<br> On Chine !!</h3>
-	<h1 class="liste">Liste des enchères</h1>
+
+		<h3>Chez Martine,<br> On Chine !!</h3>
+		<h1 class="liste">Liste des enchères</h1>
 	
 	<div class="fonctionnalites">
 	
@@ -30,9 +39,10 @@
 		</c:if>
 
 		  <a class="inscription" href ="./Inscription">Inscription</a>
-
+		<a class="monprofil" href ="./MonProfil">MonProfil</a>
+		
 		<c:if test="${!empty user}">
-			<a class="profil" href  ="./Profil">Profil</a>
+			
 			<a class ="deco" href = "./Deconnection">Deconnexion</a>
 		</c:if>
 	</div>
@@ -49,13 +59,13 @@
    			 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
    			
    			 <p> prenom nom du vendeur : <a href="./Profil?idutilisateur=${enchere.user.id}">"${enchere.user.nom}" "${enchere.user.prenom}"</a></p>
+            
    			 <p> nom article : "${enchere.article.nomArticle}"</p>
    			</a></li>
 			</c:forEach>
 	</ul>
 </c:if>			
-
-
+              
 
 
 </body>

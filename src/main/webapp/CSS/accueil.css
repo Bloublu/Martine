@@ -1,20 +1,19 @@
 @charset "ISO-8859-1";
 
 
-body{
+.bloctitre{
 background-image:url(WEB-INF/mamies-funky.jpg);	
-	
+max-width: 100%;
+display:flex;
+align-items:flex-start;
+
+		
 }
 
-.mamartine{
-	float:left;
-	max-width: 100%;
-	height: auto;
-}
 
-
-h1{
+.titre{
 text-align: center;
+margin-left:570px;
 }
 
 .header{
