@@ -1,5 +1,11 @@
 @charset "ISO-8859-1";
 
+
+body{
+background-image:url(WEB-INF/mamies-funky.jpg);	
+	
+}
+
 .mamartine{
 	float:left;
 	max-width: 100%;
@@ -10,6 +16,7 @@
 body{
 background-color: #F7FCD6 ;	
 }
+
 
 h1{
 text-align: center;
@@ -93,9 +100,7 @@ h3{
 color:white;
 margin: 20px;
 }
-form{
-	bloc-align:justify;
-}
+
 .recherch{
 	display:flex;
 	justify-content:center;
