@@ -29,7 +29,7 @@ public class ArticleManager {
 		
 			
 			
-			Article articleAInserer = new Article(nom_article, description, date_debut_enchere, date_fin_enchere, 
+			Article articleAInserer = new Article(no_utilisateur, nom_article, description, date_debut_enchere, date_fin_enchere, 
 					prix_initial, prix_vente, no_categorie, "CR", no_utilisateur, image);
 			
 			
