@@ -13,7 +13,7 @@
 <body>
 <h1>Liste des Enchères</h1>
 <h1>tester les liens</h1>
-<h2>Bienvenue ${user.nom} ${enchere.user.prenom}</h2> 
+<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
 
 <form action="" method="post">
 <label for="filteEnchere">Filtre : </label><br>
