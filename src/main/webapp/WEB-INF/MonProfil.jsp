@@ -1,17 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-    <%@page import="fr.eni.martine.bo.User" %>
-	<%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Profil</title>
+<title>MonProfil</title>
 </head>
 <body>
-
-<h1>Mon Profil</h1>
+<h1>MON PROFIL</h1>
 
 <p> ${user.pseudo}</p> 
 <p> ${user.nom}</p> 
@@ -20,7 +16,9 @@
 <p> ${user.telephone}</p> 
 <p> ${user.rue}</p>
 <p> ${user.codepostal}</p>
-<p> ${user.ville}</p> 
+<p> ${user.ville}</p>
+<p> ${user.motDePasse}</p><br>
 
+<p> ${user.credit}</p>
 </body>
 </html>
