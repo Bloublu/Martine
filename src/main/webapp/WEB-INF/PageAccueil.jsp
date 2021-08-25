@@ -28,7 +28,6 @@
 <div>
 <div class="mamartine"><a href="./Accueil"><img src="<c:url value="/images/Martine.jpg"/>"/></div></a>
 <h1>Chez Martine !!</h1>
->>>>>>> branch 'master' of https://github.com/Bloublu/Martine.git
 </div>
 	
 	
