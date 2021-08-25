@@ -20,6 +20,13 @@ public class DAOFactory {
 			
 		}
 		
+
+		public static EnchereUniqueDAO getEnchereUniqueDAO() {
+			EnchereUniqueDAO UniqueEnchereDAO = new EnchereUniqueDAOJdbcImpl();
+			return UniqueEnchereDAO;
+			
+		}
+
 		public static ConnectUDAO getNewAffUtiliDAO() {
 			ConnectUDAO affutiliDAO = new ConnectUDAOJdbcImpl();
 			return affutiliDAO;
@@ -27,6 +34,6 @@ public class DAOFactory {
 		}
 		
 		
-		
+
 
 }
