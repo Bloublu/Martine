@@ -13,7 +13,7 @@ public interface ConnectUDAO {
 	
 	public User SelectUtilisateur (int id) throws DalException;
 
-
+	public void UpdateUtilisateur (User user)throws DalException;
 	
-	
+	public void DeleteUtilisateur (int id) throws DalException;
 }

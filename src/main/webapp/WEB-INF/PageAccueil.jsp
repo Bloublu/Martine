@@ -39,10 +39,10 @@
 		</c:if>
 
 		  <a class="inscription" href ="./Inscription">Inscription</a>
-		<a class="monprofil" href ="./MonProfil">MonProfil</a>
+		  <a class="monprofil" href ="./MonProfil">MonProfil</a>
 		
 		<c:if test="${!empty user}">
-			<a class="profil" href  ="./Profil">Profil</a>
+			
 			<a class ="deco" href = "./Deconnection">Deconnexion</a>
 		</c:if>
 	</div>

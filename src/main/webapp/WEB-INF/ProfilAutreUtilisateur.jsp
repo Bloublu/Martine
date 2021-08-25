@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<h1>Mon Profil</h1>
+<h1>Profil de : ${user.prenom} </h1>
 
 <p> ${user.pseudo}</p> 
 <p> ${user.nom}</p> 

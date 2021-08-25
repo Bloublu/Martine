@@ -19,7 +19,23 @@ public class User {
 
 
 	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
-			String codepostal, String ville, String motDePasse, byte admnistrateur, int credit) {
+			String codepostal, String ville, String motDePasse) {
+		super();
+		this.id = id;
+		this.pseudo = pseudo;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.rue = rue;
+		this.codepostal = codepostal;
+		this.ville = ville;
+		MotDePasse = motDePasse;
+	}
+
+
+	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+			String codepostal, String ville, String motDePasse, int credit) {
 		super();
 		this.id = id;
 		this.pseudo = pseudo;

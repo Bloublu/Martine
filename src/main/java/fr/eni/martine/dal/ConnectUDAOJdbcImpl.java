@@ -21,7 +21,12 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	
 	private final static String SELECT_USER_UTILISATEURS = "SELECT pseudo,nom,prenom,email,telephone,rue,code_postal,ville FROM UTILISATEURS WHERE no_utilisateur=?;";
 
-
+	private final static String UPDATE_USER = "UPDATE UTILISATEURS set pseudo=?, nom=? ,prenom=?, email=?, telephone=?, rue=?, code_postal=?, ville=?, mot_de_passe=? "
+			+ "WHERE no_utilisateur=? ;";
+	
+	private final static String DELETE_USER = "DELETE FROM UTILISATUERS WHERE no_utilisateurs=?;";
+			
+			
 	@Override
  	public User ConnectionUser(String identifiant, String Mdp) throws DalException{
  		
@@ -61,7 +66,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 }
 		
-		public void CreateUser(User user) throws DalException {
+	public void CreateUser(User user) throws DalException {
 
 			try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
 
@@ -95,7 +100,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 			}
 		}
 	 	
-		public User SelectUtilisateur (int id) throws DalException{
+	public User SelectUtilisateur (int id) throws DalException{
 	 		
 	 		User OtherUser = null;
 	 		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
@@ -128,8 +133,51 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 
 	}
 
-	
+	public void UpdateUtilisateur (User user)throws DalException{
+		
+		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
 
-	 }
+			PreparedStatement pSt = cnx.prepareStatement(UPDATE_USER);
+			
+			pSt.setString(1, user.getPseudo());
+			pSt.setString(2, user.getNom());
+			pSt.setString(3, user.getPrenom());
+			pSt.setString(4, user.getEmail());
+			pSt.setString(5, user.getTelephone());
+			pSt.setString(6, user.getRue());
+			pSt.setString(7, user.getCodepostal());
+			pSt.setString(8, user.getVille());
+			pSt.setString(9, user.getMotDePasse());
+			pSt.setInt(10, user.getId());
+			
+			pSt.executeUpdate();
+			
+		}catch (SQLException e) {
+            e.printStackTrace();
+
+            throw new DalException("Erreur dans la méthode update user");
+
+	}
+		
+	}
+
+	public void DeleteUtilisateur (int id) throws DalException{
+		
+		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
+
+			PreparedStatement pSt = cnx.prepareStatement(DELETE_USER);
+		
+            pSt.setInt(1, id);
+            
+            // ExecuteUpdate
+            pSt.executeUpdate();
+            
+        } catch (SQLException e) {
+            throw new DalException("Erreur dans la méthode delete.");
+        }
+    }
+}
+
+
 	
 
