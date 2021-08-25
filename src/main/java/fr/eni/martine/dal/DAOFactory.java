@@ -20,5 +20,11 @@ public class DAOFactory {
 			return articleDAO;
 			
 		}
+		
+		public static EnchereUniqueDAO getEnchereUniqueDAO() {
+			EnchereUniqueDAO UniqueEnchereDAO = new EnchereUniqueDAOJdbcImpl();
+			return UniqueEnchereDAO;
+			
+		}
 
 }

@@ -35,6 +35,7 @@ public class EnchereDAOJdbcImpl implements EnchereDAO {
                             );
                     
                      article = new Article(
+                    		 rs.getInt("no_article"),
                     		 rs.getString("nom_article"),
                     		 rs.getString("description"),
                     		 rs.getTimestamp("date_debut_enchere").toLocalDateTime(),

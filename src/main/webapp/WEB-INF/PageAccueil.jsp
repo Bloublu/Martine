@@ -92,7 +92,7 @@
 <c:if test="${!empty enchereList }"> 
 	<ul class="ulEnchere">
 			<c:forEach items="${enchereList}" var="enchere">
-			<li class="liEnchere"><a href="#">
+			<li class="liEnchere"><a href="./Encheres?no_article=${enchere.article.noArticle}">
    			 <p> date enchere : ${enchere.dateEnchere} </p>
    			 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
    			
