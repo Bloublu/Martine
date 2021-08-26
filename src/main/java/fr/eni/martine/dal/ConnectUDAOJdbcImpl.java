@@ -24,7 +24,7 @@ public class ConnectUDAOJdbcImpl implements ConnectUDAO{
 	private final static String UPDATE_USER = "UPDATE UTILISATEURS set pseudo=?, nom=? ,prenom=?, email=?, telephone=?, rue=?, code_postal=?, ville=?, mot_de_passe=? "
 			+ "WHERE no_utilisateur=? ;";
 	
-	private final static String DELETE_USER = "DELETE FROM UTILISATUERS WHERE no_utilisateurs=?;";
+	private final static String DELETE_USER = "DELETE FROM UTILISATEURS WHERE no_utilisateur=?;";
 			
 			
 	@Override

@@ -28,45 +28,33 @@ private ProfilManager profilmanager;
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			
 		
+			HttpSession session = request.getSession();  
+			
+	        User userConnecte = (User) request.getSession().getAttribute("user");
+	        int id = userConnecte.getId();
+	        
+			this.profilmanager.DeleteUser(id);
+			
+			session.setAttribute("user", userConnecte);
+			
+				
+			} catch (BllException e) {
+				
+				
+				e.printStackTrace();
+			}
+		
+		request.getSession().invalidate();
 		request.getRequestDispatcher("/WEB-INF/MonProfil.jsp").forward(request, response);
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		try {
-			
-		String pseudo = request.getParameter("pseudo");
-		String prenom = request.getParameter("prenom");
-		String rue = request.getParameter("rue");
-		String telephone = request.getParameter("telephone");
-		String email = request.getParameter("email");
-		String nom = request.getParameter("nom");
-		String codepostal = request.getParameter("codepostal");
-		String ville = request.getParameter("ville");
-		String motdepasse = request.getParameter("motdepasse");
-		
-		
-		HttpSession session = request.getSession();  
-		
-        User userConnecte = (User) request.getSession().getAttribute("user");
-        int id = userConnecte.getId();
-        
-		userConnecte = this.profilmanager.DeleteUser(pseudo, nom, prenom, email, telephone, rue, codepostal, ville, motdepasse, id);
-		
-		session.setAttribute("user", userConnecte);
-		
-		request.getRequestDispatcher("/WEB-INF/MonProfil.jsp").forward(request, response);
-			
-		} catch (BllException e) {
-			
-			
-			e.printStackTrace();
-		}
-		
-		
-		
+		doGet(request, response);
 	}
 
 }

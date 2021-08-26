@@ -53,7 +53,7 @@
 			<button class="creer" type="submit">Enregistrer</button><br>
 		</form>
 		
-        <a href="./delete">Supprimer</a>
+        <button type="submit" name="retour" onclick="document.location.href='${pageContext.request.contextPath}/ConfirmDelete'">supprimmer</button>
         
         
 <p> ${user.credit}</p>
