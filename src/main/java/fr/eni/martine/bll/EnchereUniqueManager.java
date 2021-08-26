@@ -6,13 +6,13 @@ import fr.eni.martine.bo.Enchere;
 import fr.eni.martine.dal.DAOFactory;
 import fr.eni.martine.dal.DalException;
 
-public class ListEnchereUniqueManager {
+public class EnchereUniqueManager {
 
 	
 	
-public static List <Enchere> getEnchereUnique(int noArticle) throws BllException {
+public static Enchere getEnchereUnique(int noArticle) throws BllException {
 		
-		List<Enchere> enchereUnique = null;
+	Enchere enchereUnique = null;
 		try {
 			enchereUnique = DAOFactory.getEnchereUniqueDAO().selectUniqueEnchere(noArticle);
 			
@@ -26,7 +26,17 @@ public static List <Enchere> getEnchereUnique(int noArticle) throws BllException
 		return enchereUnique;
 	}
 	
+public void getEncherir(int encherir, int idArticle) throws BllException{
+	try {
+		DAOFactory.getEnchereUniqueDAO().Encherir(encherir, idArticle);
+		
+	}catch(DalException e) {
+		
+		e.printStackTrace();
+		throw new BllException("Probleme de validation du profil. Note technique : " + e.getMessage());
 	
+	}
+}
 	
 	
 	
