@@ -37,18 +37,17 @@
     
     <div class="fonctionnalites">
     
-        <a class="vente" href = "./NouvelleVente">Nouvelle vente</a>
+        
         <c:if test="${empty user}">
             <a class="co" href = "./connection">Connexion</a>
         </c:if>
 
- 
-
           <a class="inscription" href ="./Inscription">Inscription</a>
-        <a class="monprofil" href ="./MonProfil">MonProfil</a>
-        
+
         <c:if test="${!empty user}">
-            <a class="profil" href  ="./Profil">Profil</a>
+        	<a class="profil" href ="./MonProfil">Mon Profil</a>
+        	<a class="vente" href = "./NouvelleVente">Nouvelle vente</a>
+            
             <a class ="deco" href = "./Deconnection">Deconnexion</a>
         </c:if>
     </div>
