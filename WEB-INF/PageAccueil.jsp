@@ -102,7 +102,7 @@
     <ul class="ulEnchere">
             <c:forEach items="${enchereList}" var="enchere">
             <li class="liEnchere"><a href="./Encheres?no_article=${enchere.article.noArticle}">
-            
+            <img src="<c:url value="/images/Martine.jpg"/>"/>         
                 <p> date enchere : ${enchere.dateEnchere} </p>
                 <p> montant enchere : ${enchere.montantEnchere} &euro; </p>
                
@@ -113,10 +113,6 @@
             </c:forEach>
     </ul>
 </c:if>            
-              
-
- 
-
 
 </body>
 </html>
