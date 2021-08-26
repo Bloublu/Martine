@@ -20,6 +20,28 @@ public class Article {
 	
 	
 	public Article(int noArticle, String nomArticle, String description, LocalDateTime debutEnchere, LocalDateTime finEnchere,
+
+			int prixInitial, int prixVente, int categorie, String etatVente, int no_utilisateur, String image) {
+		
+		super();
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		DebutEnchere = debutEnchere;
+		FinEnchere = finEnchere;
+		this.prixInitial = prixInitial;
+		this.prixVente = prixVente;
+		this.categorie = categorie;
+		this.etatVente = etatVente;
+		this.no_utilisateur = no_utilisateur;
+		this.image = image;
+	}
+
+
+
+
+	public Article(String nomArticle, String description, LocalDateTime debutEnchere, LocalDateTime finEnchere,
+
 			int prixInitial, int prixVente, int categorie, String etatVente, int no_utilisateur, String image) {
 		super();
 		this.noArticle = noArticle;
@@ -35,10 +57,9 @@ public class Article {
 		this.image = image;
 	}
 
-	
-	
 
-	
+
+
 	public int getNo_utilisateur() {
 		return no_utilisateur;
 	}
@@ -150,9 +171,11 @@ public class Article {
 	}
 
 
-	public void setNoArticle(int noArticle) {
+	public  void setNoArticle(int noArticle) {
 		this.noArticle = noArticle;
 	}
+	
+	
 	
 	
 	

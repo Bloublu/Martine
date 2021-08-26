@@ -9,12 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import fr.eni.martine.bll.BllException;
-
 import fr.eni.martine.bll.ConnectionManager;
 import fr.eni.martine.bo.User;
-import fr.eni.martine.dal.DalException;
+
 
 
 @WebServlet("/connection")

@@ -7,10 +7,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni.martine.bll.ArticleManager;
+import fr.eni.martine.bo.Article;
+
 
 
 @WebServlet("/DetailVente")
-public class ServletDetailVente extends HttpServlet {
+public class ServletVente extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
   
@@ -19,6 +22,9 @@ public class ServletDetailVente extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Appel de la méthode getNoArticle via la BLL (manager)
+		//Article article = ArticleManager.getNoArticle(NoArticle);
+		
 		
 		request.getRequestDispatcher("/WEB-INF/detailVente.jsp").forward(request, response);
 	}
@@ -28,6 +34,7 @@ public class ServletDetailVente extends HttpServlet {
 	
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		
 	}
 

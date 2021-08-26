@@ -14,12 +14,6 @@ public class DAOFactory {
 	    	return eDAO;
 	    }
 
-		public static ArticleDAO getNewArticleDAO() {
-			ArticleDAO articleDAO = new ArticleDAOJdbcImpl();
-			return articleDAO;
-			
-		}
-		
 
 		public static EnchereUniqueDAO getEnchereUniqueDAO() {
 			EnchereUniqueDAO UniqueEnchereDAO = new EnchereUniqueDAOJdbcImpl();
@@ -36,6 +30,12 @@ public class DAOFactory {
 		public static ConnectUDAO getUpdate() {
 			ConnectUDAO updateDAO = new ConnectUDAOJdbcImpl();
 			return updateDAO;
+			
+		}
+		
+		public static ArticleDAO getNewArticleDAO() {
+			ArticleDAO articleDAO = new ArticleDAOJdbcImpl();
+			return articleDAO;
 			
 		}
 		

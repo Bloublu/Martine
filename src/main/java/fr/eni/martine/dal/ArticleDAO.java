@@ -10,6 +10,8 @@ public interface ArticleDAO {
 	
 	public void CreateArticle(Article articleAVendre) throws DalException;
 
+	public Article ValiderArticle (int NoArticle) throws DalException;
+	
 	
 	
 }
