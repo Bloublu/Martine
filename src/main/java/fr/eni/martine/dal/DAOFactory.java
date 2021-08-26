@@ -20,5 +20,7 @@ public class DAOFactory {
 			return articleDAO;
 			
 		}
+		
+		
 
 }

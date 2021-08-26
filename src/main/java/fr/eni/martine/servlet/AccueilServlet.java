@@ -1,7 +1,6 @@
 package fr.eni.martine.servlet;
 
 import java.io.IOException;
-import java.time.LocalTime;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -13,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bll.ListEnchereManager;
 import fr.eni.martine.bo.Enchere;
-import fr.eni.martine.bo.User;
 
 
 @WebServlet("/Accueil")

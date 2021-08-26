@@ -2,6 +2,7 @@ package fr.eni.martine.bo;
 
 public class User {
 
+	private int no_utilisateur;
 	private int id;
 	private String pseudo;
 	private String nom;
@@ -18,9 +19,10 @@ public class User {
 	
 
 
-	public User(int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
+	public User(int no_utilisateur, int id, String pseudo, String nom, String prenom, String email, String telephone, String rue,
 			String codepostal, String ville, String motDePasse, byte admnistrateur, int credit) {
 		super();
+		this.no_utilisateur = no_utilisateur;
 		this.id = id;
 		this.pseudo = pseudo;
 		this.nom = nom;
@@ -202,6 +204,16 @@ public class User {
 
 	public void setMotDePasse(String motDePasse) {
 		MotDePasse = motDePasse;
+	}
+
+
+	public int getNo_utilisateur() {
+		return no_utilisateur;
+	}
+
+
+	public void setNo_utilisateur(int no_utilisateur) {
+		this.no_utilisateur = no_utilisateur;
 	}
 
 

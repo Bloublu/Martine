@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,14 +22,15 @@ import fr.eni.martine.dal.DalException;
 
 
 @WebServlet("/NouvelleVente")
+@MultipartConfig 
 public class ServletNouvelleVente extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-	
+	private ArticleManager manager;
     
 	public ServletNouvelleVente() {
 		super();
-		
+		this.manager = new ArticleManager();
 	}
 
 
@@ -36,10 +39,11 @@ public class ServletNouvelleVente extends HttpServlet {
 	 * Méthode doGet redirige vers JSP
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		// On redirige vers la JSP d'affichage 
+		
 		request.getRequestDispatcher("/WEB-INF/NouvelleVente.jsp").forward(request, response);
-
+		
 	}
 		
 
@@ -49,11 +53,23 @@ public class ServletNouvelleVente extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		User userConnecte = (User) request.getSession().getAttribute("connectUser");
+		// GESTION DE L'IMAGE :
+		
+		
+		
+		
+		
+		
+		
+		HttpSession session = request.getSession();		
+		User userConnecte = (User) request.getSession().getAttribute("user");
 		int no_utilisateur = userConnecte.getId();
 		
+		//Article article = null; // déclaration de l'objet Article
 		try {
-			
+		
+		//int no_utilisateur = Integer.parseInt(request.getParameter("no_utilisateur"));
+		
 		String nom_article = request.getParameter("nom_article");
 		String description = request.getParameter("description");
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
@@ -61,10 +77,6 @@ public class ServletNouvelleVente extends HttpServlet {
 		LocalDateTime date_fin_enchere = LocalDateTime.parse(request.getParameter("date_fin_enchere") + " " + request.getParameter("time_fin_enchere"), formatter);
 		int prix_initial = Integer.parseInt(request.getParameter("prix_initial"));
 		int no_categorie = Integer.parseInt(request.getParameter("no_categorie"));
-		// Récupérer no_utilisateur via le user :
-		// HttpSession session = request.getSession();
-		
-		//int no_utilisateur = 1;
 		String image = request.getParameter("image");
 		
 		
@@ -72,11 +84,11 @@ public class ServletNouvelleVente extends HttpServlet {
 		am.createArticle(nom_article, description, date_debut_enchere, date_fin_enchere, prix_initial, prix_initial, no_categorie, no_utilisateur, image);
 		
 		
-		
 				
 		} catch (DalException | BllException e) {
 			
 			e.printStackTrace();
+			
 		}
 		request.getRequestDispatcher("/WEB-INF/NouvelleVente.jsp").forward(request, response);
 	
@@ -85,5 +97,3 @@ public class ServletNouvelleVente extends HttpServlet {
 
 	
 }
-
-//<input type="text" name="description" placeholder="Décrivez votre article" size="70" maxlength="70"><br>
