@@ -33,7 +33,17 @@ public class DAOFactory {
 			
 		}
 		
+		public static ConnectUDAO getUpdate() {
+			ConnectUDAO updateDAO = new ConnectUDAOJdbcImpl();
+			return updateDAO;
+			
+		}
 		
+		public static ConnectUDAO getDelete() {
+			ConnectUDAO deleteDAO = new ConnectUDAOJdbcImpl();
+			return deleteDAO;
+			
+		}
 
 
 }

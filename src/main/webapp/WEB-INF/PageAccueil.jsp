@@ -32,8 +32,6 @@
     
 <div class="header">
 
- 
-
         <h3>Chez Martine,<br> On Chine !!</h3>
         <h1 class="liste">Liste des enchères</h1>
     
@@ -87,6 +85,7 @@
 		<input type="checkbox" name="encours"/>mes ventes en cours <br>
 		<input type="checkbox" name="nonDebuter"/>ventes non débutées  <br>
 		<input type="checkbox" name="termine"/>ventes terminées  <br>
+>>>>>>> branch 'master' of https://github.com/Bloublu/Martine.git
 	</div>
 </div>
 
