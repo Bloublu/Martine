@@ -28,8 +28,14 @@
     </div>
     
 </div>
-    
-    
+  
+  
+
+<img src="${pageContext.request.contextPath}/images/Martine.jpg" width = "150px"/> 
+
+
+
+   
 <div class="header">
 
         <h3>Chez Martine,<br> On Chine !!</h3>
@@ -48,7 +54,7 @@
         <a class="monprofil" href ="./MonProfil">MonProfil</a>
         
         <c:if test="${!empty user}">
-            <a class="profil" href  ="./Profil">Profil</a>
+            
             <a class ="deco" href = "./Deconnection">Deconnexion</a>
         </c:if>
     </div>
@@ -98,9 +104,6 @@
 </div>
 
 </form>
-
- 
-
 
 <c:if test="${!empty enchereList }"> 
     <ul class="ulEnchere">
