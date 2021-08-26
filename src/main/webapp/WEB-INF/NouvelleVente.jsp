@@ -23,7 +23,9 @@ enctype="multipart/form-data">
 
 <div class="header">
 <h1>Faites vos ventes !</h1>
-<div class="mamartine"><img src="<c:url value="/images/Martine.jpg"/>"/></div>
+
+
+<a href="./Accueil"><img src="<c:url value="/images/Martine.jpg"/>"/></a>
 </div><br><br>
 
 	
@@ -51,7 +53,7 @@ enctype="multipart/form-data">
 		
 		<label for="image">Photo de l'article :</label>
 		<input type="file" id="image" name="image" accept="image/png, image/jpeg" onchange="PreviewImage();"required><br><br>
-		<img id="uploadPreview" style="width: 100px; height: 100px;"/><br><br>
+		
 		
 	<script type="text/javascript"> 
 

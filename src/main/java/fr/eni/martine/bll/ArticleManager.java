@@ -18,10 +18,12 @@ public class ArticleManager {
 	
 	}
 
+	// Méthode créer Article 
 	public void createArticle(String nom_article, String description, LocalDateTime date_debut_enchere, LocalDateTime date_fin_enchere, 
 			int prix_initial, int prix_vente, int no_categorie, int no_utilisateur, String image) throws DalException, BllException {
 		
-		Article articleAInserer = new Article(nom_article, description, date_debut_enchere, date_fin_enchere, 
+		// Instanciation de l'objet Article : articleAInserer avec tous ces champs
+		Article articleAInserer = new Article(no_utilisateur, nom_article, description, date_debut_enchere, date_fin_enchere, 
 					prix_initial, prix_vente, no_categorie, "CR", no_utilisateur, image);
 			
 			//Contraintes pour validation des champs :

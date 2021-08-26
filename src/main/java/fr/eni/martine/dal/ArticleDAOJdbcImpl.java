@@ -29,13 +29,7 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 	
 	
 	
-	/**
-     * @param id de l'article recherché
-	 * @return 
-	 * @return 
-	 * @return 
-     * @return un article
-     */
+	
 	// Méthode ValiderArticle pour afficher champs de la vente 
 	public Article ValiderArticle (int NoArticle) throws DalException {
 		Article article = null;
@@ -68,6 +62,7 @@ public class ArticleDAOJdbcImpl implements ArticleDAO {
 	}
 	
 		
+	
 	
 	
 	

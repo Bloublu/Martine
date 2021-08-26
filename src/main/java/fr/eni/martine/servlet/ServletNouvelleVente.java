@@ -69,7 +69,6 @@ public class ServletNouvelleVente extends HttpServlet {
 		try {
 		
 		//int no_utilisateur = Integer.parseInt(request.getParameter("no_utilisateur"));
-		
 		String nom_article = request.getParameter("nom_article");
 		String description = request.getParameter("description");
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"); 
@@ -90,7 +89,7 @@ public class ServletNouvelleVente extends HttpServlet {
 			e.printStackTrace();
 			
 		}
-		request.getRequestDispatcher("/WEB-INF/NouvelleVente.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/detailVente.jsp").forward(request, response);
 	
 
 	}

@@ -1,6 +1,5 @@
 package fr.eni.martine.dal;
 
-import java.time.LocalDateTime;
 
 public class DAOFactory {
 
@@ -15,12 +14,36 @@ public class DAOFactory {
 	    	return eDAO;
 	    }
 
+
+		public static EnchereUniqueDAO getEnchereUniqueDAO() {
+			EnchereUniqueDAO UniqueEnchereDAO = new EnchereUniqueDAOJdbcImpl();
+			return UniqueEnchereDAO;
+			
+		}
+
+		public static ConnectUDAO getNewAffUtiliDAO() {
+			ConnectUDAO affutiliDAO = new ConnectUDAOJdbcImpl();
+			return affutiliDAO;
+			
+		}
+		
+		public static ConnectUDAO getUpdate() {
+			ConnectUDAO updateDAO = new ConnectUDAOJdbcImpl();
+			return updateDAO;
+			
+		}
+		
 		public static ArticleDAO getNewArticleDAO() {
 			ArticleDAO articleDAO = new ArticleDAOJdbcImpl();
 			return articleDAO;
 			
 		}
 		
-		
+		public static ConnectUDAO getDelete() {
+			ConnectUDAO deleteDAO = new ConnectUDAOJdbcImpl();
+			return deleteDAO;
+			
+		}
+
 
 }

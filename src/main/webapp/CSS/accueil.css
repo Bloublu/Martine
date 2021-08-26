@@ -1,82 +1,104 @@
-@charset "ISO-8859-1";
+.bloctitre{
+background-image:url(WEB-INF/mamies-funky.jpg);    
+max-width: 100%;
+display:flex;
+align-items:flex-start;
 
-.mamartine{
-	float:left;
-	max-width: 100%;
-	height: auto;
+ 
+
+        
 }
 
-h1{
-text-align: center;
-}
+ 
+
 
 .header{
-clear:left;
+
+ 
+
 display: flex;
-justify-content:space-between;	
+justify-content:space-between;    
 flex-direction: row;
-background-color:rgb(121, 92, 96);	
+background-color:rgb(121, 92, 96);    
 box-shadow:5px 6px 6px black;
+
+ 
 
 
 }
 .fonctionnalites{
-display: flex;	
+display: flex;    
 flex-direction:row;
-	
+    
 }
 
-.vente{	
+ 
+
+.vente{    
 border: 2px solid black;
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
+
+ 
 
 
 }
 
-.inscription{	
-border: 2px solid black;	
-padding:5px 5px 5px 5px;	 
+ 
+
+.inscription{    
+border: 2px solid black;    
+padding:5px 5px 5px 5px;     
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
+
+ 
 
 }
+
+
 
 .profil{
-border: 2px solid black;		
+border: 2px solid black;        
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
 
 }
 
+ 
+
 .co{
-border: 2px solid black;	
+border: 2px solid black;    
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;
+margin:10px;
+
+ 
 
 }
 .deco{
-border: 2px solid black;	
+border: 2px solid black;    
 padding:5px 5px 5px 5px;
 border-radius:15px;
 box-shadow:5px 6px 6px black;
-margin-right:10px;	
+margin:10px;    
+
+ 
 
 }
 .ulEnchere{
-display: flex;	
+display: flex;    
 flex-direction:justify-content;
 flex-wrap: wrap;
 }
 .liEnchere{
-list-style-type: none;	
+list-style-type: none;    
 border: 2px solid black;
 padding:5px 5px 5px 5px;
 border-radius:15px;
@@ -86,4 +108,64 @@ margin:25px 25px 25px 25px;
 h3{
 color:white;
 margin: 20px;
+}
+
+ 
+
+.recherch{
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+    padding-top:10px;    
+}
+.check{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: minmax(100px, auto);
+
+ 
+
+    justify-content:center;
+    margin:20 px;
+}
+.validRech{
+    margin-left:100px;
+    padding:15px;
+}
+.cat{
+    margin-left:20px;
+}
+
+ 
+
+.radio{
+    
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+      grid-auto-rows: minmax(100px, auto);
+
+ 
+
+}
+.Rachat{
+    margin: 10px;
+    grid-column: 2;
+      grid-row: 0;
+}
+.Rvente{
+    margin: 10px;
+    grid-column: 3;
+      grid-row: 0;
+}
+.Cachat{
+    margin: 10px;
+    grid-column: 2;
+      grid-row: 0;
+}
+.Cvente{
+    margin: 10px;
+    grid-column: 3;
+      grid-row: 0;
 }

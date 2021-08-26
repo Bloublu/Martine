@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="fr.eni.martine.bo.Enchere" %>
+<%@page import="fr.eni.martine.bo.User" %>
+<%@page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +12,8 @@
 </head>
 <body>
 <h1>Liste des Enchères</h1>
-
-
+<h1>tester les liens</h1>
+<h2>Bienvenue ${user.nom} ${user.prenom}</h2> 
 
 <form action="" method="post">
 <label for="filteEnchere">Filtre : </label><br>
@@ -49,5 +52,10 @@
 
 <button type="submit">Rechercher</button>
 </form>
+
+<p> on tente d'afficher l'article d'un GUS. nom: ${enchere.user.nom}</p>
+
+
+
 </body>
 </html>

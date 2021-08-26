@@ -13,7 +13,7 @@ import fr.eni.martine.bo.Article;
 
 
 @WebServlet("/DetailVente")
-public class ServletDetailVente extends HttpServlet {
+public class ServletVente extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
   

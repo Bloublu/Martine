@@ -45,7 +45,9 @@
   		<option value="4">Sport & loisir</option>
 		</select><br><br>
 		
-		
+		<p>
+		${user.ville}
+		</p>
 		
 		
 		<label for="image">Photo de l'article :</label>
