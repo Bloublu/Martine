@@ -65,6 +65,7 @@
 	<c:when test="(${enchere.article.categorie} = 3)">Vetements</c:when>
 	<c:when test="(${enchere.article.categorie} = 4)">Sport & Loisirs</c:when>
 </c:choose>
+<img src="<c:url value="/images/Martine.jpg"/>"/>
 <p>Meilleure offre : 	${enchere.montantEnchere}pts </p>
 <p>Mise a prix : 	${enchere.article.prixInitial}</p>
 <p>Fin de l'enchere : 	${enchere.dateEnchere}</p>
@@ -79,7 +80,7 @@
 <button type="submit" name="ench" class="Enchérir">Enchérir</button>
 </p>
 </form>
-<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
+<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Accueil</button>
 
 </body>
 </html>
