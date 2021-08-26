@@ -79,7 +79,7 @@
 <button type="submit" name="ench" class="Enchérir">Enchérir</button>
 </p>
 </form>
-
+<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
 
 </body>
 </html>
