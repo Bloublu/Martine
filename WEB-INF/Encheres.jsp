@@ -53,33 +53,9 @@
 <button type="submit">Rechercher</button>
 </form>
 
-<!-- ***********************************************************************DETAIL VENTE******************************************************************************************** -->
-<h1>Détail Vente</h1>
+<p> on tente d'afficher l'article d'un GUS. nom: ${enchere.user.nom}</p>
 
-<p>${enchere.article.nomArticle}</p>
-<p>Description : 	${enchere.article.description}</p>
-<p>Catégorie : 	</p>
-<c:choose>
-	<c:when test="(${enchere.article.categorie} = 1)">Informatique</c:when>
-	<c:when test="(${enchere.article.categorie} = 2)">Ameublement</c:when>
-	<c:when test="(${enchere.article.categorie} = 3)">Vetements</c:when>
-	<c:when test="(${enchere.article.categorie} = 4)">Sport & Loisirs</c:when>
-</c:choose>
-<p>Meilleure offre : 	${enchere.montantEnchere}pts </p>
-<p>Mise a prix : 	${enchere.article.prixInitial}</p>
-<p>Fin de l'enchere : 	${enchere.dateEnchere}</p>
-<p> Retrait : 	${enchere.user.rue} ${enchere.user.codepostal} ${enchere.user.ville}</p>
-<p>Vendeur : 	${enchere.user.pseudo}</p>
 
-<form action="" method="post">
-<p>Ma Proposition : 
-<input type="number" name="number" min="${enchere.montantEnchere +1}" max="1000" value="${enchere.montantEnchere + 1}" step="1">
-
-<input name="idArticle" type="hidden" value="${enchere.article.noArticle}">
-<button type="submit" name="ench" class="Enchérir">Enchérir</button>
-</p>
-</form>
-<button type="submit" name="annuler" onclick="document.location.href='${pageContext.request.contextPath}/Accueil'">Annuler</button>
 
 </body>
 </html>

@@ -1,6 +1,5 @@
 @charset "ISO-8859-1";
 
-
 form{
 display: flex;
 justify-content: center;		
@@ -30,19 +29,13 @@ justify-content: center;
 	
 }
 
-.creer{	
-
+.creer{
+	
+margin-right:20px;
 	
 }
 
 .annuler{
 	
-	
-}
-
-.message{
-	
-color:red;	
-background-color:red;	
 	
 }

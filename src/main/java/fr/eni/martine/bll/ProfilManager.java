@@ -39,10 +39,8 @@ public class ProfilManager {
 		return user;
 	}
 
-	public User DeleteUser (String pseudo, String nom,String prenom, String email, String telephone, String rue, String codepostal, String ville, String motdepasse, int id )
+	public void DeleteUser ( int id )
 			throws BllException {
-		
-		User user = new User(id, pseudo, nom, prenom, email, telephone, rue, codepostal, ville, motdepasse);
 		
 		try {
 			
@@ -53,7 +51,7 @@ public class ProfilManager {
 			e.printStackTrace();
 			throw new BllException("Probleme dans le DeleteUser (Manager). Note technique : " + e.getMessage());
 		}
-		return user;
+		
 	}
 	
 	

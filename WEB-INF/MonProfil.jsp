@@ -6,7 +6,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="./CSS/header.css" rel="stylesheet">
 <title>MonProfil</title>
 </head>
 <body>
@@ -16,12 +15,6 @@
 								
         <form action="./MonProfil" method="post">
         
-        
-        
-<div class="header">
-<a href="./Accueil"><img src="<c:url value="/images/Martine.jpg"/>"/></a>
-</div><br><br>
-
             <label>Pseudo :</label>
             <input type="text" value="${user.pseudo}" name="pseudo"/>
             <br/>
@@ -60,7 +53,7 @@
 			<button class="creer" type="submit">Enregistrer</button><br>
 		</form>
 		
-        <a href="./delete">Supprimer</a>
+        <button type="submit" name="retour" onclick="document.location.href='${pageContext.request.contextPath}/ConfirmDelete'">supprimmer</button>
         
         
 <p> ${user.credit}</p>
