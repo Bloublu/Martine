@@ -1,5 +1,12 @@
 @charset "ISO-8859-1";
+body{
+	
+	
+background-color:red;
 
+
+
+}
 form{
 display: flex;
 justify-content: center;		
