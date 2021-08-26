@@ -63,21 +63,13 @@
 <label  for="favorite" class="cat" >Catégorie :</label>
 <select name="categ" size="1">
 
-<optgroup label="Maison">
-<option value="electromenager">electroménager</option>
-<option value="ameublement">Ameublement</option>
-<option value="jardin">Jardin</option>
+<optgroup>
+<option value="Informatique">Informatique</option>
+<option value="Ameublement">Ameublement</option>
+<option value="Vetements">Vetements</option>
+<option value="Sport & Loisir">Sport & Loisir</option>
 </optgroup>
-<optgroup label="Véhicules">
-<option value="Voiture">Voiture</option>
-<option value="Moto">Moto</option>
-<option value="Bateau">Bateau</option>
-</optgroup>
-<optgroup label="Mode">
-<option value="Vetement">Vetement</option>
-<option value="Chaussures">Chaussures</option>
-<option value="Montres & Bijoux">Montres & Bijoux</option>
-</optgroup>
+
 </select><br>
 <button type="submit" class="validRech">Rechercher</button><br>
 </div>

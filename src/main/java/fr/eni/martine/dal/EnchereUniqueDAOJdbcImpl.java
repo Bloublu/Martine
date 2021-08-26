@@ -15,23 +15,24 @@ public class EnchereUniqueDAOJdbcImpl implements EnchereUniqueDAO {
 
 	
 	
-	final static String SELECT_ENCHERE_UNIQUE = "SELECT * FROM ENCHERES INNER JOIN ARTICLES_VENDUS ON ENCHERES.no_article = ARTICLES_VENDUS.no_article INNER JOIN UTILISATEURS ON ENCHERES.no_utilisateur = UTILISATEURS.no_utilisateur WHERE no_article = ?;";
+	final static String SELECT_ENCHERE_UNIQUE = "SELECT * FROM ENCHERES INNER JOIN ARTICLES_VENDUS ON ENCHERES.no_article = ARTICLES_VENDUS.no_article INNER JOIN UTILISATEURS ON ENCHERES.no_utilisateur = UTILISATEURS.no_utilisateur WHERE encheres.no_article = ?;";
+	private static final String UPDATE_ENCHERIR = "UPDATE ENCHERES SET montant_enchere = ? WHERE no_article = ?;";
 	
 	 @Override
-    public List<Enchere> selectUniqueEnchere(int noArticle) throws DalException {
+    public Enchere selectUniqueEnchere(int noArticle) throws DalException {
         
-        List<Enchere> enchereUnique = new ArrayList<>();
-        Enchere enchere = null;
+        Enchere enchereUnique = new Enchere();
+       
         Article article = null;
         User utilisateur = null;
         
         try 	(Connection cnx = ConnectionProvider.getPoolConnexion()) {
     	 		PreparedStatement pSt = cnx.prepareStatement(SELECT_ENCHERE_UNIQUE);
-    	 		pSt.setInt(0, noArticle);
+    	 		pSt.setInt(1, noArticle);
     	 		ResultSet rs = pSt.executeQuery();
             while (rs.next()) {
                    
-					enchere = new Enchere(
+					enchereUnique = new Enchere(
 							 rs.getTimestamp("date_enchere").toLocalDateTime(),
            				rs.getInt("montant_enchere")
                            );
@@ -49,7 +50,7 @@ public class EnchereUniqueDAOJdbcImpl implements EnchereUniqueDAO {
                    		 rs.getInt("no_utilisateur"),
                    		 rs.getString("image")	                    
                     );
-                    enchere.setArticle(article);
+                    enchereUnique.setArticle(article);
                     utilisateur = new User(
                    		 rs.getInt("no_utilisateur"),
 	            			rs.getString("pseudo"),
@@ -64,8 +65,8 @@ public class EnchereUniqueDAOJdbcImpl implements EnchereUniqueDAO {
 	            			rs.getInt("credit"),
 	            			rs.getBoolean("administrateur")
                     );
-                    enchere.setUser(utilisateur);
-                    enchereUnique.add(enchere);
+                    enchereUnique.setUser(utilisateur);
+                
                    
                 }  
                 
@@ -77,6 +78,18 @@ public class EnchereUniqueDAOJdbcImpl implements EnchereUniqueDAO {
 		
 	 }
 	
+	public void Encherir(int encherir, int idArticle) throws DalException {
+		
+		try (Connection cnx = ConnectionProvider.getPoolConnexion()) {
+	 		PreparedStatement pSt = cnx.prepareStatement(UPDATE_ENCHERIR);
+	 		pSt.setInt(1, encherir);
+	 		pSt.setInt(2, idArticle);
+	 		
+	 		pSt.executeUpdate();
+		}catch (SQLException e) {
+			 e.printStackTrace();
+	            throw new DalException(e.getMessage()); 
+	}
 	
-	
+}
 }

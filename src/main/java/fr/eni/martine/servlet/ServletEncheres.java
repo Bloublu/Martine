@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.eni.martine.bll.BllException;
 import fr.eni.martine.bll.ListEnchereManager;
-import fr.eni.martine.bll.ListEnchereUniqueManager;
+import fr.eni.martine.bll.EnchereUniqueManager;
 import fr.eni.martine.bo.Enchere;
 import fr.eni.martine.bo.User;
 
@@ -21,8 +21,8 @@ import fr.eni.martine.bo.User;
 @WebServlet("/Encheres")
 public class ServletEncheres extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ListEnchereUniqueManager managerEnchereUnique;
-       
+	private EnchereUniqueManager managerEnchereUnique;
+      
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -38,9 +38,9 @@ public class ServletEncheres extends HttpServlet {
 		
 		int noArticle = Integer.parseInt(request.getParameter("no_article"));
 		
-		List<Enchere> enchereUnique = null;
+		Enchere enchereUnique = null;
 		try {
-			enchereUnique = ListEnchereUniqueManager.getEnchereUnique(noArticle);
+			enchereUnique = EnchereUniqueManager.getEnchereUnique(noArticle);
 		} catch (BllException e) {
 			
 			e.printStackTrace();
@@ -54,8 +54,19 @@ public class ServletEncheres extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+		 int encherir = Integer.parseInt(request.getParameter("number"));
+		 int idArticle = Integer.parseInt(request.getParameter("idArticle"));
+		
+		EnchereUniqueManager eum = new EnchereUniqueManager();
+		 try {
+			eum.getEncherir(encherir, idArticle);
+		} catch (BllException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 doGet(request, response);
 	
-		doGet(request, response);
 	}
 
 }

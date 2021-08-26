@@ -7,7 +7,7 @@ import fr.eni.martine.bo.Enchere;
 public interface EnchereUniqueDAO {
 
 	
-	public List <Enchere> selectUniqueEnchere(int noArticle) throws DalException; 
+	public Enchere selectUniqueEnchere(int noArticle) throws DalException; 
 	
-	
+	public void Encherir(int encherir, int idArticle) throws DalException;
 }
